@@ -20,4 +20,22 @@ public class FindFirstDuplicateElement {
             System.out.println("First Duplicate Element : "+array[min]);
         }
     }
+
+    public int findDuplicate(int[] nums) {
+
+        int duplicateIndex=-1;
+        HashSet hashSet = new HashSet();
+        for(int i=nums.length-1; i >=0; i--){
+            if(hashSet.contains(nums[i])){
+                duplicateIndex=i;
+            }else {
+                hashSet.add(nums[i]);
+            }
+        }
+
+        if(duplicateIndex !=-1){
+            return nums[duplicateIndex];
+        }
+        return -1;
+    }
 }

@@ -1,6 +1,9 @@
 package com.binod.basicdatastructureandalgorithmoperation.LinkedList;
 
 public class AddTwoNumbers {
+
+    //https://leetcode.com/problems/add-two-numbers/
+
     int length=0;
     Node head;
     Node tail;
@@ -8,26 +11,23 @@ public class AddTwoNumbers {
     public static void main(String[] args) {
         AddTwoNumbers linkedList = new AddTwoNumbers();
         linkedList.addFirst(3);
-        linkedList.addFirst(6);
-        linkedList.addFirst(5);
+        linkedList.addFirst(4);
+        linkedList.addFirst(2);
         linkedList.print();
 
         AddTwoNumbers linkedList1 = new AddTwoNumbers();
-        linkedList1.addFirst(2);
         linkedList1.addFirst(4);
-        linkedList1.addFirst(8);
+        linkedList1.addFirst(6);
+        linkedList1.addFirst(5);
         linkedList1.print();
 
-        AddTwoNumbers linkedList2 = new AddTwoNumbers();
-        Node node=linkedList2.addTwoNumbersLinkList(linkedList.head, linkedList1.head);
+        Node node= new AddTwoNumbers().addTwoNumbersLinkList(linkedList.head,linkedList1.head);
         print(node);
     }
 
     public  Node addTwoNumbersLinkList(Node node1, Node node2) {
         Node l1 = revreseLinkList1(node1);
         Node l2 = revreseLinkList1(node2);
-        print(l1);
-        print(l2);
         int sum = 0;
         int carry = 0;
         Node finalNode = null;
@@ -56,7 +56,7 @@ public class AddTwoNumbers {
         if(carry >0){
             temp.next=new Node(carry);
         }
-        return revreseLinkList1(finalNode);
+        return finalNode;
     }
 
 
@@ -69,8 +69,7 @@ public class AddTwoNumbers {
             prevPointer=node;
             node=nextPointer;
         }
-        node=prevPointer;
-        return node;
+        return prevPointer;
     }
     public void addFirst(int data){
         Node nodeData= new Node(data);
