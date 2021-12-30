@@ -109,7 +109,7 @@ public class MergeOverlappingSubintervalsProb {
 
             }
         }
-
+        arrayList.stream().distinct();
         return arrayList.toArray(new int[arrayList.size()-1][arrayList.size()-1]);
     }
 
