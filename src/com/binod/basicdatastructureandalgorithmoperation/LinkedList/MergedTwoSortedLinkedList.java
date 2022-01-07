@@ -10,7 +10,7 @@ public class MergedTwoSortedLinkedList {
         merged.addFirst(25);
         merged.addFirst(15);
         merged.addFirst(6);
-        merged.print();
+        merged.print(merged.head);
 
         MergedTwoSortedLinkedList merge1= new MergedTwoSortedLinkedList();
         merge1.addFirst(50);
@@ -18,58 +18,53 @@ public class MergedTwoSortedLinkedList {
         merge1.addFirst(27);
         merge1.addFirst(12);
 
-        merge1.print();
-        MergedTwoSortedLinkedList mergedTwoSortedLinkedList=mergedTwoLinkedList(merged,merge1);
-        mergedTwoSortedLinkedList.print();
+        print(merge1.head);
+        Node sortedLinkedList=mergedTwoLinkedList(merged,merge1);
+        print(sortedLinkedList);
         //System.out.println("Find KTH Element is : " + findKth.findKthDataFromEndSecondMethod(findKth,3));
     }
 
-    public static MergedTwoSortedLinkedList mergedTwoLinkedList(MergedTwoSortedLinkedList l1, MergedTwoSortedLinkedList l2){
-        MergedTwoSortedLinkedList sorted = new MergedTwoSortedLinkedList();
+    //Time Complexity=O(M+N), Space Complexity=O(1)
+    public static Node mergedTwoLinkedList(MergedTwoSortedLinkedList l1, MergedTwoSortedLinkedList l2){
+        Node sorted = null;
         if(l1 == null){
-            return l2;
+            return l2.head;
         }else if(l2 == null){
-            return l1;
+            return l1.head;
         }
 
         if(l1 !=null && l2 !=null){
             if(l1.head.data <= l2.head.data){
-              sorted.head=l1.head;
-              sorted.tail=l1.head;
+              sorted=l1.head;
               l1.head=l1.head.next;
             }else{
-                sorted.head=l2.head;
-                sorted.tail=l2.head;
+                sorted=l2.head;
                 l2.head=l2.head.next;
             }
         }
 
+        Node mergedTail = sorted;
 
-        while (l1 !=null && l2 !=null){
-            MergedTwoSortedLinkedList temp=new MergedTwoSortedLinkedList();
+        while (l1.head !=null && l2.head !=null){
+            Node temp=null;
 
             if(l1.head.data <= l2.head.data){
-                temp.head=l1.head;
-                sorted.tail.next=temp.head;
-                sorted.tail=temp.head;
+                temp=l1.head;
                 l1.head=l1.head.next;
             }else {
-                temp.head=l2.head;
-                sorted.tail.next=temp.head;
-                sorted.tail=temp.head;
+                temp=l2.head;
                 l2.head=l2.head.next;
             }
 
-            if(l1.head == null){
-                sorted.tail.next=l2.head;
-                sorted.tail=l2.head;
-                return sorted;
-            }else if(l2.head == null){
-                sorted.tail.next=l1.head;
-                sorted.tail=l1.head;
-                return sorted;
-            }
+            mergedTail.next = temp;
+            mergedTail = temp;
 
+        }
+        if(l1.head == null){
+            mergedTail.next=l2.head;
+
+        }else if(l2.head == null){
+            mergedTail.next=l1.head;
         }
         return sorted;
     }
@@ -89,9 +84,9 @@ public class MergedTwoSortedLinkedList {
         }
     }
 
-    public void print() {
+    public static void print(Node l1) {
         System.out.println("Printing the Singly LinkedList : ");
-        Node temp = head;
+        Node temp = l1;
         StringBuffer str = new StringBuffer();
         while (temp != null) {
             str.append(temp.data).append("->");

@@ -11,7 +11,7 @@ public class ReverseLinkedList {
         merged.addFirst(25);
         merged.addFirst(15);
         merged.addFirst(6);
-        merged.print();
+        merged.print(merged.head);
 
         Node node=revreseLinkList(merged.head);
         print(node);
