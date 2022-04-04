@@ -13,7 +13,7 @@ public class highestRepeatedWordFromAFile {
 
         Map<String, Integer> wordMap = buildMapWithWords("C:\\Users\\609722983\\Downloads\\BriteBill_Code\\DataStructureAndAlgorithm\\src\\com\\binod\\datastructure\\highestRepeatedWordFromAFile");
         List<Map.Entry<String, Integer>> sortByValue= sortByValueInDecreasingOrder(wordMap);
-        System.out.println("List of repeated word from file and their count");
+        System.out.println("List of repeated word from file.md and their count");
         for(Map.Entry<String, Integer> entry : sortByValue){
             System.out.println(""+entry.getKey()+" : "+entry.getValue());
 

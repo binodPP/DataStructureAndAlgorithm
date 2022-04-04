@@ -1,8 +1,8 @@
-package com.binod.basicdatastructureandalgorithmoperation.array;
+package com.leetcodeproblem;
 
 import java.util.Stack;
 
-public class ValidParentheses {
+public class ValidParentheses_20 {
 
     //https://leetcode.com/problems/valid-parentheses/
 

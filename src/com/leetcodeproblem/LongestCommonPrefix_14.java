@@ -1,6 +1,6 @@
-package com.binod.basicdatastructureandalgorithmoperation.array;
+package com.leetcodeproblem;
 
-public class LongestCommonPrefix {
+public class LongestCommonPrefix_14 {
     //https://leetcode.com/problems/longest-common-prefix/solution/
 
     public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class LongestCommonPrefix {
              return strs[0];
          }
 
-         for(int i=0; i< strs.length; i++){
+         for(int i=1; i< strs.length; i++){
              result=longestCommonPrefixHelper(result,strs[i]);
          }
          return result;
