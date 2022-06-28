@@ -1,6 +1,8 @@
 package com.binod.basicdatastructureandalgorithmoperation.dynamicprogramming;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class CoinChangeProblemWithMinimumCoins {
 

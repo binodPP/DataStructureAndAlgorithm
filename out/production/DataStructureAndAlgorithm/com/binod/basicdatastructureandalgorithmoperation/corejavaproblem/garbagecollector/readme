@@ -1,0 +1,6 @@
+Memory Mangagemnet docs:
+=================================================
+https://www.oracle.com/technetwork/java/javase/tech/memorymanagement-whitepaper-1-150020.pdf
+https://docs.oracle.com/javase/10/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-23844E39-7499-400C-A579-032B68E53073
+https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html
+https://docs.oracle.com/javase/9/gctuning/introduction-garbage-collection-tuning.htm#JSGCT-GUID-326EB4CF-8C8C-4267-8355-21AB04F0D304

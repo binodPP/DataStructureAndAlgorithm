@@ -5,6 +5,7 @@ public class Node {
     Node next;
     Node prev;
     // Constructor for SinglyLinkList
+    public Node(){};
     public Node(int d) {
         this.data = d;
         next = null;

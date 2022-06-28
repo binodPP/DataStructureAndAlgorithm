@@ -5,6 +5,7 @@ import java.util.*;
 public class LRUCacheImplementation {
 
     int capacity;
+
     Map<Integer, LRUCACHE> lrucacheMap = new HashMap<>();
     Deque<LRUCACHE> deque = new LinkedList<>();
 

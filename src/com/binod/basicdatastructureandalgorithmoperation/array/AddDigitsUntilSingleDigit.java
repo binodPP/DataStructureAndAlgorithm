@@ -3,7 +3,7 @@ package com.binod.basicdatastructureandalgorithmoperation.array;
 public class AddDigitsUntilSingleDigit {
 
     //Using Recursion
-    /*public static int addDigits(int num) {
+    public static int addDigitsRecursion(int num) {
         int num1=0;
         int num2=0;
       if(num <= 9){
@@ -11,9 +11,9 @@ public class AddDigitsUntilSingleDigit {
       }else{
           num1= num %10;
           num2 = num/10;
-          return addDigits(num1+num2);
+          return addDigitsRecursion(num1+num2);
       }
-    }*/
+    }
 
     //Without using recursion
     public static int addDigits(int num) {
@@ -28,5 +28,6 @@ public class AddDigitsUntilSingleDigit {
     public static void main(String[] args) {
         int num=13;
         System.out.println("Aarray list : " + addDigits(num));
+        System.out.println(addDigitsRecursion(num));
         }
 }

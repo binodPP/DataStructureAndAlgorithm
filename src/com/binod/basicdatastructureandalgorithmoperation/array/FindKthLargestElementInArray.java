@@ -2,7 +2,7 @@ package com.binod.basicdatastructureandalgorithmoperation.array;
 
 
 
-import com.binod.basicdatastructureandalgorithmoperation.sortingalgorithm.QuickSortAlgorithm;
+import com.binod.basicdatastructureandalgorithmoperation.sortingalgorithm.QuickSortAlgorithm_912;
 
 import java.util.PriorityQueue;
 
@@ -12,7 +12,7 @@ public class FindKthLargestElementInArray {
         int k =4;
         System.out.println(findKthLargest(numbers,k));
 
-        QuickSortAlgorithm.sortAlgorithm(numbers,0,numbers.length-1);
+        QuickSortAlgorithm_912.sortAlgorithm(numbers,0,numbers.length-1);
 
         System.out.println(numbers[numbers.length-k]);;
     }
