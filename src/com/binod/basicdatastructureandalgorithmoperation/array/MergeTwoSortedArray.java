@@ -6,8 +6,8 @@ import java.util.TreeMap;
 public class MergeTwoSortedArray {
     //https://leetcode.com/problems/merge-sorted-array/
     public static void main(String[] args) {
-        //int arr1[] = { 1, 3, 4, 5,9}, arr2[] = {2, 4, 6, 8};
-        int arr1[] = { 1}, arr2[] = {};
+        int arr1[] = { 1, 3, 4, 5,9}, arr2[] = {2, 4, 6, 8};
+       // int arr1[] = { 1}, arr2[] = {};
         new MergeTwoSortedArray().merge(arr1,arr1.length,arr2,arr2.length);
         mergeTwoSortedArrayOption2(arr1,arr2);
         mergeTwoSortedArrayUsingTreeMap(arr1,arr2);

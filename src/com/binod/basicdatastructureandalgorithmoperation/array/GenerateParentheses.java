@@ -10,7 +10,7 @@ public class GenerateParentheses {
     //Using backtracking recursion problem pattern
 
     public static void main(String[] args) {
-        int n=2;
+        int n=3;
 
         System.out.println(generateParenthesis(n));
     }

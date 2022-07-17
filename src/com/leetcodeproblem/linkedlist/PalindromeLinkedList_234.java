@@ -11,31 +11,18 @@ public class PalindromeLinkedList_234 {
         PalindromeLinkedList_234 findKth= new PalindromeLinkedList_234();
         findKth.addFirst(1);
         findKth.addFirst(2);
-        findKth.addFirst(3);
+        //findKth.addFirst(3);
         findKth.addFirst(2);
         findKth.addFirst(1);
 
 
         System.out.println(isPalindrome(findKth.head));
+        //System.out.println(isPalindrome1(findKth.head));
     }
 
     //Pattern-2: Time=O(n), space= O(1)
     public static boolean isPalindrome(Node head) {
         Node first=head;
-        Node second=head.next;
-        //Node midNode = null;
-        //Node previous_of_mid=null;
-        while(second != null && second.next != null){
-            second= second.next.next;
-           // previous_of_mid=first;
-            first= first.next;
-        }
-
-        if(second != null){  //If there are odd nodes
-            //midNode=first;
-            first= first.next;
-        }
-
         Node reversed=reverseList(first);
         return compareList(reversed,head);
     }
@@ -69,7 +56,7 @@ public class PalindromeLinkedList_234 {
     public static boolean isPalindrome1(Node head) {
         Stack<Integer> stack= new Stack<>();
         Node current=head;
-        while(current != null && current.next != null){
+        while(current != null){
             stack.push(current.data);
             current= current.next;
         }
@@ -78,12 +65,14 @@ public class PalindromeLinkedList_234 {
 
         while(current != null && !stack.isEmpty()){
 
-            if(current.data == stack.pop()){
-                return true;
+            if(current.data != stack.pop()){
+                return false;
             }
+
+            current= current.next;
         }
 
-        return false;
+        return true;
     }
 
     public void addFirst(int data){

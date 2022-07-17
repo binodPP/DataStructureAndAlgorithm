@@ -14,8 +14,8 @@ public class FindKthElementLinkedListFromEnd {
         findKth.addFirst(5);
         findKth.addFirst(6);
         findKth.print();
-        System.out.println("Find KTH Element is : " + findKth.findKthDataFromEndFirstMethod(findKth,3));
-        System.out.println("Find KTH Element is : " + findKth.findKthDataFromEndSecondMethod(findKth,3));
+        System.out.println("Find KTH Element is : " + findKth.findKthDataFromEndFirstMethod(findKth,5));
+        System.out.println("Find KTH Element is : " + findKth.findKthDataFromEndSecondMethod(findKth,5));
     }
 
     //Method 1, to find the total node in linkedlist then start search
@@ -43,7 +43,7 @@ public class FindKthElementLinkedListFromEnd {
             first=first.next;
         }
 
-        while(first.next !=null){
+        while(first != null && first.next !=null){
             first=first.next;
             second=second.next;
         }

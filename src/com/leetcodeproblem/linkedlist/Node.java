@@ -12,4 +12,8 @@ public class Node {
         prev=null;
     }
 
+    public Node(int key, Node next) {
+        this.data=key;
+        this.next = next;
+    }
 }

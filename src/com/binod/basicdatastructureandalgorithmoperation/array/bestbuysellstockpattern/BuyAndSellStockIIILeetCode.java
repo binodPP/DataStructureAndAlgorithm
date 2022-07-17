@@ -17,7 +17,7 @@ public class BuyAndSellStockIIILeetCode {
     */
 
     public static void main(String[] args) {
-        int[] prices={3,3,5,0,0,3,1,4};
+        int[] prices={1,2,3,4,5};
         System.out.println(new BuyAndSellStockIIILeetCode().maxProfit(prices));
     }
 

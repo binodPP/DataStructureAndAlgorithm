@@ -1,5 +1,6 @@
 package com.leetcodeproblem.linkedlist;
 
+//https://leetcode.com/problems/intersection-of-two-linked-lists/
 public class IntersectionDataOfTwoLinkedList {
     int length=0;
     Node head;

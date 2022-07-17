@@ -18,7 +18,7 @@ public class DeleteLastOccurrence {
 
     }
 
-    //Generic code to delete node from first, last, and from any position in te linked list
+    //Generic code to delete node from first, last, and from any position in the linked list
     public void deleteLast(Node node, int key){
         Node prev=node;
         Node current=node.next;

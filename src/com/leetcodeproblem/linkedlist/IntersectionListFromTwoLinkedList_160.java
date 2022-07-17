@@ -1,5 +1,6 @@
 package com.leetcodeproblem.linkedlist;
 
+//https://leetcode.com/problems/intersection-of-two-linked-lists/
 public class IntersectionListFromTwoLinkedList_160 {
     //First list is
     //4 10 11 15 20
@@ -60,7 +61,7 @@ public class IntersectionListFromTwoLinkedList_160 {
             headB = headB.next;
             headA = headA.next;
         }
-        return headA;
+        return null;
 
     }
 

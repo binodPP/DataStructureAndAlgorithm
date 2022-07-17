@@ -19,52 +19,49 @@ public class MergedTwoSortedLinkedList_21 {
         merge1.addFirst(12);
 
         print(merge1.head);
-        Node sortedLinkedList=mergedTwoLinkedList(merged,merge1);
+        Node sortedLinkedList=mergedTwoLinkedList(merged.head,merge1.head);
         print(sortedLinkedList);
         //System.out.println("Find KTH Element is : " + findKth.findKthDataFromEndSecondMethod(findKth,3));
     }
 
     //Time Complexity=O(M+N), Space Complexity=O(1)
-    public static Node mergedTwoLinkedList(MergedTwoSortedLinkedList_21 l1, MergedTwoSortedLinkedList_21 l2){
+    public static Node mergedTwoLinkedList(Node l1, Node l2){
         Node sorted = null;
         if(l1 == null){
-            return l2.head;
+            return l2;
         }else if(l2 == null){
-            return l1.head;
+            return l1;
         }
 
         if(l1 !=null && l2 !=null){
-            if(l1.head.data <= l2.head.data){
-              sorted=l1.head;
-              l1.head=l1.head.next;
+            if(l1.data <= l2.data){
+              sorted=l1;
+              l1=l1.next;
             }else{
-                sorted=l2.head;
-                l2.head=l2.head.next;
+                sorted=l2;
+                l2=l2.next;
             }
         }
 
         Node mergedTail = sorted;
 
-        while (l1.head !=null && l2.head !=null){
-            Node temp=null;
+        while (l1 !=null && l2 !=null){
 
-            if(l1.head.data <= l2.head.data){
-                temp=l1.head;
-                l1.head=l1.head.next;
+            if(l1.data <= l2.data){
+                mergedTail.next=l1;
+                l1=l1.next;
             }else {
-                temp=l2.head;
-                l2.head=l2.head.next;
+                mergedTail.next=l2;
+                l2=l2.next;
             }
-
-            mergedTail.next = temp;
-            mergedTail = temp;
+            mergedTail = mergedTail.next;
 
         }
-        if(l1.head == null){
-            mergedTail.next=l2.head;
+        if(l1 == null){
+            mergedTail.next=l2;
 
-        }else if(l2.head == null){
-            mergedTail.next=l1.head;
+        }else if(l2 == null){
+            mergedTail.next=l1;
         }
         return sorted;
     }

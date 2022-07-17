@@ -4,7 +4,7 @@ public class ImplementstrStrFunction {
     //https://leetcode.com/problems/implement-strstr/
 
     public static void main(String[] args) {
-        String haystack = "miissipiss" , needle = "issippi";
+        String haystack = "miissippiss" , needle = "issippi";
 
         System.out.println(strStr(haystack,needle));
     }

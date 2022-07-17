@@ -1,5 +1,6 @@
 package com.leetcodeproblem.linkedlist;
 
+//https://leetcode.com/problems/rotate-list/
 public class RotateList_61 {
     int length=0;
     Node head=null;
@@ -41,11 +42,11 @@ public class RotateList_61 {
         Node p2=head;
         Node newHead=null;
 
-        for(int i=0; i <= k-1; i++){
+        for(int i=1; i <= k; i++){
             p2= p2.next;
         }
 
-        while(p2.next != null){
+        while(p2 != null && p2.next != null){
             p1= p1.next;
             p2=p2.next;
         }

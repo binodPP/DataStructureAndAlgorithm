@@ -21,13 +21,13 @@ public class PairwiseSwapElementsInLinkedList_24 {
         pairWise.addFirst(2);
         pairWise.addFirst(1);
         pairWise.print();
-        pairWise.swapElementsPaireWise(pairWise);
+        pairWise.swapElementsPaireWise(pairWise.head);
         pairWise.print();
     }
 
     //Time=O(n), space=O(1)
-    public void swapElementsPaireWise(PairwiseSwapElementsInLinkedList_24 l1){
-        Node temp=l1.head;
+    public void swapElementsPaireWise(Node l1){
+        Node temp=l1;
         while(temp != null && temp.next != null){
             int data= temp.data;
             temp.data=temp.next.data;

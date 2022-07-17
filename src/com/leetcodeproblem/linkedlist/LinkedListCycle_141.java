@@ -1,5 +1,9 @@
 package com.leetcodeproblem.linkedlist;
 
+import java.util.HashSet;
+import java.util.Set;
+
+//https://leetcode.com/problems/linked-list-cycle/
 public class LinkedListCycle_141 {
     int length=0;
     Node head=null;
@@ -14,9 +18,46 @@ public class LinkedListCycle_141 {
 
         //print(findKth.head);
 
+        System.out.println(hasCycle1(findKth.head));
         System.out.println(hasCycle(findKth.head));
+        System.out.println(hasCycle3(findKth.head));
+
+
+
+        //Below code is just for internal testing
+        // insert cycle
+        findKth.head.next.next.next = findKth.head.next;
+
+        if (hasCycle1(findKth.head)) {
+            System.out.println("Cycle Found");
+        }
+        else {
+            System.out.println("No Cycle Found");
+        }
     }
 
+    //Pattern1: TC: O(n), SC: O(1)
+    //Floyd’s Cycle Detection Algorithm
+    public static boolean hasCycle1(Node head) {
+        if(head == null || head.next ==null){
+            return false;
+        }
+        Node slow=head;
+        Node fast= head;
+        while (fast != null && fast.next != null)
+        {
+            slow = slow.next;
+
+            fast = fast.next.next;
+
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //Pattern2
     public static boolean hasCycle(Node head) {
         Node start= null;
         Node slow=head;
@@ -32,6 +73,19 @@ public class LinkedListCycle_141 {
                 }
                 return true;
             }
+        }
+        return false;
+    }
+
+    //Pattern3: TC: O(n), SC: O(n)
+    public static boolean hasCycle3(Node head) {
+        Set<Node> mp = new HashSet<>();
+        while (head != null) {
+            if (mp.contains(head)) {
+                return true;
+            }
+            mp.add(head);
+            head = head.next;
         }
         return false;
     }

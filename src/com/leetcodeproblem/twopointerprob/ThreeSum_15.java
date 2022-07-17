@@ -76,8 +76,6 @@ public class ThreeSum_15 {
                         list.add(nums[i]);
                         list.add(nums[j]);
                         list.add(-(nums[i]+nums[j]));
-                        //System.out.println("["+nums[i]+","+nums[j]+","+nums[k]+"]");
-                        //listSet.add(list);
                         listList.add(list);
                     }
                 while(j+1<nums.length && nums[j+1]==nums[j]){

@@ -3,6 +3,7 @@ package com.leetcodeproblem.linkedlist;
 import java.util.Stack;
 
 public class FlattenBinaryTreeToLinkedList_114 {
+    //https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
     static TreeNode prev=null;
     public static void main(String[] args) {
         TreeNode  root = new TreeNode(1);
@@ -13,8 +14,8 @@ public class FlattenBinaryTreeToLinkedList_114 {
         root . right . right = new TreeNode(6);
         root . right . right . left = new TreeNode(7);
         flattenPattern1(root);
-        //flattenPattern2(root);
-        //flattenPattern3(root);
+        flattenPattern2(root);
+        flattenPattern3(root);
         while(root.right!=null)
         {
             System.out.print(root.val+"->");

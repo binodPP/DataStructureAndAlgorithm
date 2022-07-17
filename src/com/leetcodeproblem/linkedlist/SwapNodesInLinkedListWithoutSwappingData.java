@@ -31,17 +31,17 @@ public class SwapNodesInLinkedListWithoutSwappingData {
         int y=4;
         swapNodes.print();
         //swapNodes.swapNodesWithoutSwappingData(swapNodes,x,y);
-        swapNodes.swapNodesWithoutSwappingDataMethod2(swapNodes,x,y);
+        swapNodes.swapNodesWithoutSwappingDataMethod2(swapNodes.head,x,y);
         swapNodes.print();
     }
 
-    public void swapNodesWithoutSwappingData(SwapNodesInLinkedListWithoutSwappingData l1, int x, int y){
+    public void swapNodesWithoutSwappingData(Node l1, int x, int y){
         //if x and y are same then there is no need to swap
         if(x == y){
             return;
         }
         //search x data
-        Node tempX=l1.head;
+        Node tempX=l1;
         Node prevX=null;
         while(tempX != null && tempX.data != x){
              prevX=tempX;
@@ -49,7 +49,7 @@ public class SwapNodesInLinkedListWithoutSwappingData {
         }
 
         //search y data
-        Node tempY=l1.head;
+        Node tempY=l1;
         Node prevY=null;
         while(tempY != null && tempY.data != y){
             prevY=tempY;
@@ -63,13 +63,13 @@ public class SwapNodesInLinkedListWithoutSwappingData {
         if(prevX != null){
             prevX.next=tempY;
         }else {
-            l1.head=tempY;
+            l1=tempY;
         }
 
         if(prevY != null){
             prevY.next=tempX;
         }else {
-            l1.head=tempX;
+            l1=tempX;
         }
 
         Node result=tempX.next;
@@ -79,13 +79,13 @@ public class SwapNodesInLinkedListWithoutSwappingData {
     }
 
 
-    public void swapNodesWithoutSwappingDataMethod2(SwapNodesInLinkedListWithoutSwappingData l1, int x, int y){
+    public void swapNodesWithoutSwappingDataMethod2(Node l1, int x, int y){
         //if x and y are same then there is no need to swap
         if(x == y){
             return;
         }
         //search x data
-        Node tempX=l1.head;
+        Node tempX=l1;
         Node prevX=null;
         while(tempX != null && tempX.data != x){
             prevX=tempX;
@@ -94,7 +94,7 @@ public class SwapNodesInLinkedListWithoutSwappingData {
 
 
         //search y data
-        Node tempY=l1.head;
+        Node tempY=l1;
         Node prevY=null;
         while(tempY != null && tempY.data != y){
             prevY=tempY;
@@ -111,11 +111,11 @@ public class SwapNodesInLinkedListWithoutSwappingData {
         tempX.next=temp;
 
         if(prevX == null){
-            l1.head=tempY;
+            l1=tempY;
             prevY.next=tempX;
         }
         if(prevY == null){
-            l1.head=tempX;
+            l1=tempX;
             prevX.next=tempY;
         }
 

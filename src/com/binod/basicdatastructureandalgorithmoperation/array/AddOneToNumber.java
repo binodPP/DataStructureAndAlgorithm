@@ -19,7 +19,7 @@ public class AddOneToNumber {
     }
 
     public static void main(String[] args) {
-        int[] array={0, 3, 7, 6, 4, 0, 5, 5, 5,9};
+        //int[] array={0, 3, 7, 6, 4, 0, 5, 5, 5,9};
         int[] array1={9,9,9};
         int[] result=plusOne(array1);
             for (int i = 0; i < result.length; i++) {

@@ -1,7 +1,7 @@
 package com.leetcodeproblem.twopointerprob;
 
 public class TrapppingRainWater_42 {
-
+    //https://leetcode.com/problems/trapping-rain-water/
     public static void main(String[] args)
     {
         int[] heights = { 4,2,0,3,2,5 };

@@ -29,8 +29,9 @@ public class AddTwoNumbers_445 {
         linkedList1.print();
 
         Node node= new AddTwoNumbers_445().addTwoNumbers(linkedList.head,linkedList1.head);
-        //Node node= new AddTwoNumbers_445().addTwoNumbersLinkList(linkedList.head,linkedList1.head);
+        Node node1= new AddTwoNumbers_445().addTwoNumbersLinkList(linkedList.head,linkedList1.head);
         print(node);
+        print(node1);
     }
 
     //Pattern 1: without reversing the linked list
@@ -54,7 +55,7 @@ public class AddTwoNumbers_445 {
         }
 
         Node temp=null;
-        while( !stack1.isEmpty() || !stack2.isEmpty() || carry == 1) {
+        while( !stack1.isEmpty() || !stack2.isEmpty() || carry >0) {
             int sum = 0;
             sum = carry + (stack1.isEmpty()?0:stack1.pop()) + (stack2.isEmpty()?0:stack2.pop());
             carry = sum / 10;

@@ -13,14 +13,14 @@ public class ReverseLinkedList_206 {
         merged.addFirst(6);
         merged.print(merged.head);
 
-        Node node=revreseLinkList(merged.head);
-        print(node);
-        //Node node1=revreseLinkListRecursive(merged.head);
-       // print(node1);
+        //Node node=revreseLinkList(merged.head);
+        //print(node);
+        Node node1=revreseLinkListRecursive(merged.head);
+        print(node1);
         //System.out.println("Find KTH Element is : " + findKth.findKthDataFromEndSecondMethod(findKth,3));
     }
 
-    //iterative way
+    //iterative way, two pointer concepts
     public static Node revreseLinkList(Node head){
         Node nextPointer=null;
         Node prevPointer=null;
