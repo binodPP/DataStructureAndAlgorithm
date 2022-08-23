@@ -1,11 +1,16 @@
 package com.binod.basicdatastructureandalgorithmoperation.corejavaproblem.creationaldesignpattern.singletondesignpattern;
 
-public class ThreadSafeSingletonDoubleCheck {
+import java.io.Serializable;
+
+public class ThreadSafeSingletonDoubleCheck implements Cloneable, Serializable {
     //use below code for double check locking
     private static volatile ThreadSafeSingletonDoubleCheck instanceDoubleCheckLocking;
 
     private ThreadSafeSingletonDoubleCheck(){
-        System.out.println("New object creation started for ThreadSafeSingletonDoubleCheck");
+        if(instanceDoubleCheckLocking!=null)
+        {
+            throw new RuntimeException("You can not create object of singleton class twice");
+        }
     }
 
     //multi-threaded environment  with better performance, using double check locking
@@ -19,6 +24,17 @@ public class ThreadSafeSingletonDoubleCheck {
         }
 
         return instanceDoubleCheckLocking;
+    }
+
+    // to restrict not to create multiple instance using serialization , need to use below method
+    protected Object readResolve() {
+        return instanceDoubleCheckLocking;
+    }
+
+    // to restrict not to create multiple instance using clone, need to use below code
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return new CloneNotSupportedException();
     }
 
     public static void main(String[] args) {

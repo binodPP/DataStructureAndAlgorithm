@@ -23,7 +23,7 @@ class Consumer extends Thread {
                     }
                 }
                 System.out.println("Consuming value : " + queue.remove());
-                queue.notifyAll();
+                queue.notify();
             }
         }
     }

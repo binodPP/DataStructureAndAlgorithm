@@ -10,7 +10,7 @@ package com.leetcodeproblem;
         Explanation: [4,-1,2,1] has the largest sum = 6.*/
 public class MaxContiguousSubarraySum_53 {
     public static void main(String[] args) {
-        int[] array={-2,1,-3,4,-1,2,1,-5,4};
+        int[] array={5,4,-1,7,8};
         System.out.println("Max Contiguous Subarray Sum is : "+ maxSubArray(array));
     }
 

@@ -7,7 +7,7 @@ public class SearchInRotatedSortedArray_33 {
         System.out.println(search(nums,target));
     }
 
-    //Modified Binary search algo
+    //Modified Binary search algo , same question in binary search package SearchElementInCircularlySortedArray
     public static int search(int[] nums, int target) {
         int left=0;
         int right=nums.length-1;
@@ -17,17 +17,17 @@ public class SearchInRotatedSortedArray_33 {
                 return mid;
             }
 
-            if(nums[left] <= nums[mid]){
-                if(nums[left] <= target && nums[mid] > target){
-                    right=mid-1;
-                }else {
-                    left=mid+1;
-                }
-            }else {
+            if(nums[mid] <= nums[right]){
                 if(nums[mid] < target && target <= nums[right]){
                     left=mid+1;
                 }else {
                     right=mid-1;
+                }
+            }else {
+                if(nums[left] <= target && nums[mid] > target){
+                    right=mid-1;
+                }else {
+                    left=mid+1;
                 }
             }
         }

@@ -16,6 +16,7 @@ public class QuickSortAlgorithm_912 {
     }
 
     //Time complexity= O(n * log(n)), recursion call stack space complexity= O(n)
+    //imagine pivot element is last one
     public static int arrayPartition(int arr[],int low, int high){
           int pivot = arr[high];
           int i = low;

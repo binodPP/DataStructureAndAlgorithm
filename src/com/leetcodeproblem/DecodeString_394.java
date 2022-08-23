@@ -2,6 +2,7 @@ package com.leetcodeproblem;
 
 import java.util.Stack;
 
+//https://leetcode.com/problems/decode-string/
 public class DecodeString_394 {
     public static void main(String[] args) {
       String s="3[a]2[bc]";

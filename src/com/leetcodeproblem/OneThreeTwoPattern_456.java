@@ -35,12 +35,12 @@ public class OneThreeTwoPattern_456 {
         }
 
         int min=nums[0];
-        for(int i=1; i< nums.length; i++){
-            for(int j= i+1; j< nums.length; j++){
-                    if(nums[i] > min && nums[i] > nums[j] && min < nums[j]){
+        for(int j=1; j< nums.length; j++){
+            for(int k= j+1; j< nums.length; j++){
+                    if(nums[j] > min && nums[j] > nums[k] && min < nums[k]){
                         return true;
                     }
-                    min=Math.min(nums[i],min);
+                    min=Math.min(nums[j],min);
             }
         }
         return false;

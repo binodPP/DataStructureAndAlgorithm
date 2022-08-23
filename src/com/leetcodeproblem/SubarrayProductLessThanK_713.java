@@ -21,10 +21,11 @@ public class SubarrayProductLessThanK_713 {
         for (int right=0; right < nums.length; right++){
             prod= prod * nums[right];
 
-            while(left <= right && prod >= k){
+            while (left <= right && prod >= k){
                 prod = prod / nums[left];
                 left++;
             }
+            //formula to find the count including the current element
             count = count + right - left + 1;
         }
         return count;

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SequentialDigits_1291 {
     public static void main(String[] args) {
-        int low = 100, high = 1000000000;
+        int low = 100, high = 300;
         System.out.println(sequentialDigits(low,high));
     }
 
@@ -17,8 +17,11 @@ public class SequentialDigits_1291 {
       for(int i=1; i<=s.length();i++){
           for (int j=0;j<=s.length()-i;j++){
               String str = s.substring(j,j+i);
-              System.out.println(str);
               int digit = Integer.parseInt(str);
+              if(digit > high){
+                  break;
+              }
+              System.out.println(str);
               if(digit >= low && digit <=high){
                   list.add(digit);
               }

@@ -15,7 +15,7 @@ public class RepeatedDNASequences_187 {
         Map<String, Integer> map = new HashMap<>();
         List<String> list = new ArrayList<>();
 
-        for(int i=0; i<= s.length()-10;i++){
+        for(int i=0; i< s.length()-10+1;i++){
             String subString = s.substring(i,i+10);
             map.put(subString, map.getOrDefault(subString,0)+1);
         }

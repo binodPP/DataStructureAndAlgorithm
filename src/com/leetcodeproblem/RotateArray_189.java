@@ -5,7 +5,7 @@ public class RotateArray_189 {
         int[] nums = {1,2,3,4,5,6,7};
         int k = 3;
         rotateOptimiseOne(nums,k);
-        rotate(nums,k);
+        //rotate(nums,k);
     }
 
     //Time complexity=O(3n)->O(n), Space complexity=O(1)

@@ -30,10 +30,10 @@ public class FindMiddleElementLinkedList {
 
         System.out.println("Count : " +count);
         //to find the middle node of linked list
-        int midIndex=count%2==0?(count/2)+1:(count+1)/2;
+        int midIndex=count%2==0?(count/2):(count+1)/2;
             Node middle=findMiddleElementLinkedList.head;
         System.out.println("Mid Index : " +midIndex);
-            for(int i=1; i < midIndex; i++){
+            for(int i=0; i < midIndex; i++){
                middle=middle.next;
             }
         return middle.data;

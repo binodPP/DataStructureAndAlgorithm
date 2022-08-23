@@ -2,7 +2,7 @@ package com.leetcodeproblem;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//https://leetcode.com/problems/two-sum/
 public class FindPairInArrayOrTwoSumProb_1 {
 
 
@@ -12,8 +12,8 @@ public class FindPairInArrayOrTwoSumProb_1 {
 
         int array1[]={2,7,11,15};
         int target=9;
-        getPairedData(array,k);
-        getPairedDataUsingHashMap(array,k);
+        //getPairedData(array,k);
+        //getPairedDataUsingHashMap(array,k);
         addTwoNumberToMatchTargetNumber(array1,target);
     }
 
@@ -24,7 +24,7 @@ public class FindPairInArrayOrTwoSumProb_1 {
         for(int i=0;i<array.length;i++){
             int sum=k-array[i];
             if(map.containsKey(sum)) {
-                System.out.println("addTwoNumberToMatchTargetNumber : " + i + "," + map.get(sum));
+                System.out.println("addTwoNumberToMatchTargetNumber : " + map.get(sum) + "," +i);
             }else {
                 map.put(array[i],i);
             }

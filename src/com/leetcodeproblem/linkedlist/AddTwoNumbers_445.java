@@ -81,13 +81,6 @@ public class AddTwoNumbers_445 {
             Node node = new Node(sum);
             node.next=temp;
             temp=node;
-            /*if (finalNode == null) {
-                finalNode = temp;
-                tail = temp;
-            } else {
-                tail.next = temp;
-                tail = temp;
-            }*/
 
             if (l1 != null) {
                 l1 = l1.next;
@@ -96,9 +89,7 @@ public class AddTwoNumbers_445 {
                 l2 = l2.next;
             }
         }
-       /* if(carry >0){
-            temp.next=new Node(carry);
-        }*/
+
         return temp;
     }
 

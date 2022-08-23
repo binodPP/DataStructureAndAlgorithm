@@ -3,7 +3,7 @@ package com.leetcodeproblem;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-
+//https://leetcode.com/problems/kth-missing-positive-number/
 public class KthMissingPositiveNumber_1539 {
     public static void main(String[] args) {
         int[] arr = {1,2,3,4};
@@ -14,13 +14,13 @@ public class KthMissingPositiveNumber_1539 {
 
     //Using Binary Search, Time complexity= O(log n) , space complexity=O(1)
     public static int findKthPositive(int[] A, int k) {
-        int l = 0, r = A.length, m;
-        while (l < r) {
+        int l = 0, r = A.length-1, m;
+        while (l <= r) {
             m = l + (r-l) / 2;
             if (A[m]-1-m < k)
                 l = m + 1;
             else
-                r = m;
+                r = m-1;
         }
         return l + k;
     }

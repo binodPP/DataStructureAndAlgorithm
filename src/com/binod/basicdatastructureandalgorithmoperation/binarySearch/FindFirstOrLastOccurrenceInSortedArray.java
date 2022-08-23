@@ -5,6 +5,7 @@ public class FindFirstOrLastOccurrenceInSortedArray {
     public static void main(String[] args) {
         int[] nums = {2, 5, 5, 5, 6, 6, 8, 9, 9, 9};
         int target = 9;
+
         System.out.println("FirstOccurrence : " + findFirstOccurrence(nums,target));
         System.out.println("LastOccurrence : " + findLastOccurrence(nums,target));
     }

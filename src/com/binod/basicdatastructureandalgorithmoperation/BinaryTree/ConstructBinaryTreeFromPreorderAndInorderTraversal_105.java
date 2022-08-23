@@ -21,14 +21,15 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal_105 {
         }
         TreeNode root= new TreeNode(preOrder[preStart]);
           int j=0;
-          for(int i=0; i<inOrder.length;i++){
+          int i=0;
+          for(i=0; i<inOrder.length;i++){
               if(preOrder[preStart] == inOrder[i]){
-                 j=i;
                  break;
               }
           }
-        root.left = constructBinaryTree(preStart+1, preEnd, preOrder,inStart,j-1,inOrder);
-        root.right = constructBinaryTree(preStart+(j-inStart)+1, preEnd, preOrder,j+1,inEnd,inOrder);
+          j=i-inStart;
+        root.left = constructBinaryTree(preStart+1, preEnd, preOrder,inStart,i-1,inOrder);
+        root.right = constructBinaryTree(preStart+j+1, preEnd, preOrder,i+1,inEnd,inOrder);
         return root;
     }
 

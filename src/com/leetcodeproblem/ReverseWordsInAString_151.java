@@ -18,11 +18,12 @@ public class ReverseWordsInAString_151 {
               while (i>=0 && s.charAt(i) != ' '){
                   i--;
               }
-              if(stringBuilder.length() > 0){
-                  stringBuilder.append(" ");
-              }
               for (int k =i+1; k<=j;k++){
                   stringBuilder.append(s.charAt(k));
+              }
+
+              if(stringBuilder.length() > 1){
+                  stringBuilder.append(" ");
               }
           }
       }

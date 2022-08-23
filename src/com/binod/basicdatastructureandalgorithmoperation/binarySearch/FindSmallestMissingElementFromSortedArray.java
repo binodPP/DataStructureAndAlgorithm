@@ -3,7 +3,8 @@ package com.binod.basicdatastructureandalgorithmoperation.binarySearch;
 public class FindSmallestMissingElementFromSortedArray {
     //https://www.techiedelight.com/find-smallest-missing-element-sorted-array/
     public static void main(String[] args) {
-        int[] nums = {0, 1, 2, 3, 4, 5, 6};
+        //int[] nums = {0,1, 2, 3, 5, 6};
+        int[] nums = {1, 2, 3, 4,5};
         int left=0;
         int right=nums.length-1;
 
@@ -32,9 +33,9 @@ public class FindSmallestMissingElementFromSortedArray {
         int left = 0, right = nums.length - 1;
 
         while (left <= right) {
-            int mid = (left + right) / 2;
+            int mid = left + (right-left) / 2;
 
-            if (left == right && nums[0] == 0) {
+           if (left == right && nums[0] == 0) {
                 return left+1;
             }else if(left == right){
                 return left;
@@ -43,7 +44,11 @@ public class FindSmallestMissingElementFromSortedArray {
             if (nums[mid] == mid) {
                 left = mid + 1;
             } else {
-                right = mid - 1;
+               if(nums[mid] ==1){
+                    return mid;
+                }else {
+                    right = mid - 1;
+                }
             }
         }
 

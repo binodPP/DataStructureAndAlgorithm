@@ -1,6 +1,5 @@
 package com.binod.basicdatastructureandalgorithmoperation.BinaryTree;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TreeNode {
@@ -20,7 +19,7 @@ public class TreeNode {
         root1.left=new TreeNode(2);
         root1.right=new TreeNode(3);
         int[] voyage={1,3,2};
-        List<Integer> result = new FlipBinaryTreeToMatchPreorderTraversal().flipMatchVoyage(root1, voyage);
+        List<Integer> result = new FlipBinaryTreeToMatchPreorderTraversal_971().flipMatchVoyage(root1, voyage);
         System.out.println("Level order traversal of given tree : " + result);
 
         // Below commented data are for Class: ConstructBinaryTreeFromPreorderAndInorderTraversal

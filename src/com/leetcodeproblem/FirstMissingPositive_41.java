@@ -1,10 +1,10 @@
 package com.leetcodeproblem;
-
+//https://leetcode.com/problems/first-missing-positive/
 public class FirstMissingPositive_41 {
     public static void main(String[] args) {
-        //int[] nums = {3,4,-1,1};
-        int[] nums={1};
-        System.out.println(firstMissingPositive(nums));
+        int[] nums = {3,4,-1,1};
+        //int[] nums={1};
+        //System.out.println(firstMissingPositive(nums));
         System.out.println(firstMissingPositivePattern2(nums));
 
     }

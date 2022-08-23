@@ -18,7 +18,7 @@ public class FindMiddleElementLinkedList_876 {
         System.out.println("Middle Element is : " + findMiddleData1.findMiddleDataSecondMethod(findMiddleData1.head));
     }
 
-    //Method 1 using full traverse to find first count then find the mid node
+    //TM: O(N), SC: O(1), Method 1 using full traverse to find first count then find the mid node
     public int findMiddleDataFirstMethod(Node findMiddleElementLinkedList){
         int count=0;
         //to find the count of nodes in liked list
@@ -31,16 +31,16 @@ public class FindMiddleElementLinkedList_876 {
         System.out.println("Count : " +count);
         //to find the middle node of linked list If there are even nodes,
         // then there would be two middle nodes, we need to print the second middle element.
-        int midIndex=count%2==0?(count/2)+1:(count+1)/2;
+        int midIndex=count%2==0?count/2:(count/2+1);
         Node middle= findMiddleElementLinkedList;
         System.out.println("Mid Index : " +midIndex);
-        for(int i=1; i < midIndex; i++){
+        for(int i=0; i < midIndex; i++){
                middle=middle.next;
         }
         return middle.data;
     }
 
-    //Method 2 using two pointer, move one pointer with next node and
+    //TM: O(N), SC: O(1),Method 2 using two pointer, move one pointer with next node and
     // other pointer with two node and once 2nd pointer reached at the end then return first pointer data
     public int findMiddleDataSecondMethod(Node head) {
 

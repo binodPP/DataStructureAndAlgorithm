@@ -10,7 +10,7 @@ import java.util.Set;
 public class MissingNumberInArray_268 {
 
     public static void main(String[] args) {
-      int[] nums = {3,0,1};
+      int[] nums = {2,3,1};
         System.out.println(getMissingNoPattern1(nums));
         System.out.println(getMissingNumberPattern2(nums));
         System.out.println(getMissingNumberPattern3(nums));
@@ -31,17 +31,30 @@ public class MissingNumberInArray_268 {
     }
 
     //Method 2: Time Complexity: O(NlogN) , Space Complexity: O(1)
-    public static int getMissingNumberPattern2(int[] arr) {
-        Arrays.sort(arr);
-        int size = arr.length;
-        int i = 0;
-        while (i < size) {
-            if (arr[i] != i) {
-                return i;
+    public static int getMissingNumberPattern2(int[] nums) {
+        Arrays.sort(nums);
+        int left = 0, right = nums.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right-left) / 2;
+
+            if (left == right && nums[0] == 0) {
+                return left+1;
+            }else if(left == right){
+                return left;
             }
-            i++;
+
+            if (nums[mid] == mid) {
+                left = mid + 1;
+            } else {
+                if(nums[mid] ==1){
+                    return mid;
+                }else {
+                    right = mid - 1;
+                }
+            }
         }
-        return i + 1;
+        return -1;
     }
 
     //Method 3: Time Complexity: O(n) , Space Complexity: O(n)

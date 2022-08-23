@@ -9,8 +9,8 @@ public class MaximumProductSubarray_152 {
 
     //Pattern-1 using dp, time complexity =O(n), space complexity=O(1)
     public static int maxProduct(int[] nums) {
-        int max_ending = nums[0];
-        int min_ending = nums[0];
+        int prod1 = nums[0];
+        int prod2 = nums[0];
         int max_so_far = nums[0];
 
         if(nums.length==0){
@@ -22,11 +22,10 @@ public class MaximumProductSubarray_152 {
         }
 
         for(int i=1;i<nums.length; i++){
-            int temp = max_ending;
-            max_ending= Math.max(nums[i],Math.max(nums[i] * max_ending, nums[i] * min_ending));
-            min_ending= Math.min(nums[i],Math.min(nums[i] * temp, nums[i] * min_ending));
-
-            max_so_far = Math.max(max_so_far,Math.max(max_ending, min_ending));
+            int temp = Math.max(nums[i],Math.max(nums[i] * prod1, nums[i] * prod2));
+            prod2= Math.min(nums[i],Math.min(nums[i] * prod1, nums[i] * prod2));
+            prod1=temp;
+            max_so_far = Math.max(max_so_far,prod1);
         }
 
         return max_so_far;

@@ -43,8 +43,10 @@ public class InsertElementInBST {
         insertElementInBST.insert(13);
         insertElementInBST.insert(9);
 
-        //insertElementInBST.inorderTraversal();
-        //insertElementInBST.preOrderTraversal();
+        insertElementInBST.inorderTraversal();
+        System.out.println("/n");
+        insertElementInBST.preOrderTraversal();
+        System.out.println("/n");
         insertElementInBST.postOrderTraversal();
     }
 }

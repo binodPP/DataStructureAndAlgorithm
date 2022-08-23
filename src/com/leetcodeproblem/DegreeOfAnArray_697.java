@@ -3,6 +3,7 @@ package com.leetcodeproblem;
 import java.util.HashMap;
 import java.util.Map;
 
+//https://leetcode.com/problems/degree-of-an-array/
 public class DegreeOfAnArray_697 {
     public static void main(String[] args) {
         int[] nums = {1,2,2,3,1};
@@ -20,14 +21,14 @@ public class DegreeOfAnArray_697 {
         for(int i=0; i< nums.length; i++){
             int x= nums[i];
 
+            countMap.put(x,countMap.getOrDefault(x,0)+1);
             leftMap.putIfAbsent(x,i);
             rightMap.put(x,i);
-            countMap.put(x,countMap.getOrDefault(x,0)+1);
 
             degree=Math.max(degree, countMap.get(x));
         }
 
-        int ans=nums.length;
+        int ans=Integer.MAX_VALUE;
 
         for (Integer countMapKey: countMap.keySet()) {
             if(countMap.get(countMapKey) == degree){

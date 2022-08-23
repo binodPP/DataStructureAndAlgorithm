@@ -10,7 +10,7 @@ public class FindPairCountWhoseSomeLessOrEqualToGivenNumber {
         //output: 1.01 + 1.99, 2.5, 1.5+1.01
         //Arrays.sort(array);
         int[] array={1, 3, 4, 2, 10, 11};
-        //System.out.println("Total Count of pairs Whose Some LessOrEqual To GivenNumber : " + findThePairs1(array));
+        System.out.println("Total Count of pairs Whose Some LessOrEqual To GivenNumber : " + findThePairs1(array));
         System.out.println("Total Count of pairs Whose Some LessOrEqual To GivenNumber Method 2 : " + findThePairs2(array));
 
         int k=7;
@@ -23,7 +23,7 @@ public class FindPairCountWhoseSomeLessOrEqualToGivenNumber {
         int count=0;
         for(int i=0; i < array.length; i++){
             for(int j=i+1; j< array.length; j++){
-                if(array[i] + array[j] <=6){
+                if(array[i] + array[j] <=7){
                     count++;
                     System.out.println(array[i] +"+"+array[j]+"<="+6);
                 }

@@ -29,7 +29,7 @@ public class Producer extends Thread {
             int i = random.nextInt();
             System.out.println("Producing value : " + i);
             queue.add(i);
-            queue.notifyAll();
+            queue.notify();
             }
         }
     }

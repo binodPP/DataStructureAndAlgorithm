@@ -63,13 +63,13 @@ public class SwapNodesInLinkedListWithoutSwappingData {
         if(prevX != null){
             prevX.next=tempY;
         }else {
-            l1=tempY;
+            head=tempY;
         }
 
         if(prevY != null){
             prevY.next=tempX;
         }else {
-            l1=tempX;
+            head=tempX;
         }
 
         Node result=tempX.next;
@@ -111,11 +111,11 @@ public class SwapNodesInLinkedListWithoutSwappingData {
         tempX.next=temp;
 
         if(prevX == null){
-            l1=tempY;
+            head=tempY;
             prevY.next=tempX;
         }
         if(prevY == null){
-            l1=tempX;
+            head=tempX;
             prevX.next=tempY;
         }
 

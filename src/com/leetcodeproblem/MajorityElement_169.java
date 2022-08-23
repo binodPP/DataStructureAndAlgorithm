@@ -2,7 +2,7 @@ package com.leetcodeproblem;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//https://leetcode.com/problems/majority-element/
 public class MajorityElement_169 {
     public static void main(String[] args) {
         int[] nums = {3,2,3};
@@ -37,13 +37,16 @@ public class MajorityElement_169 {
 
         for(int i=0; i<nums.length; i++){
             if(map.containsKey(nums[i])){
-                count = Math.max(count, map.get(nums[i]));
                 map.put(nums[i],map.get(nums[i])+1);
-                if(map.get(nums[i])>count){
-                    ans= nums[i];
-                }
             }else {
                 map.put(nums[i],1);
+            }
+        }
+
+        for (Map.Entry<Integer,Integer> entry:map.entrySet()) {
+            if(count < entry.getValue()){
+                count = entry.getValue();
+                ans=entry.getKey();
             }
         }
         return ans;

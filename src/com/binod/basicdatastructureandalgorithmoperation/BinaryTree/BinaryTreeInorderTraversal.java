@@ -33,13 +33,14 @@ public class BinaryTreeInorderTraversal {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode treeNode = root;
         while( treeNode != null || !stack.isEmpty()) {
-            while (treeNode != null) {
+            if(treeNode != null) {
                 stack.push(treeNode);
                 treeNode = treeNode.left;
+            }else {
+                treeNode = stack.pop();
+                list.add(treeNode.val);
+                treeNode = (treeNode.right);
             }
-            treeNode=stack.pop();
-            list.add(treeNode.val);
-            treeNode=(treeNode.right);
         }
         return list;
     }
