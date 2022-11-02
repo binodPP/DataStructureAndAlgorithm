@@ -1,6 +1,6 @@
 package com.binod.basicdatastructureandalgorithmoperation.corejavaproblem.immutable;
 
-public class ImmutableStudent {
+public final class ImmutableStudent {
     private final int id;
     private final String name;
     private Age age;

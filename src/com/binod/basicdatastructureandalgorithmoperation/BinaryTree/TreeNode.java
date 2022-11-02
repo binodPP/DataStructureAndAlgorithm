@@ -70,25 +70,5 @@ public class TreeNode {
         System.out.println("Constructed thr Binary tree from postOrder  : " + integerList2 );
 
 
-        // Below commented data are for Class: BinaryTreeLevelOrderTraversal_102
-        TreeNode root4 = new TreeNode(1);
-        root4.left = new TreeNode(9);
-        root4.right= new TreeNode(20);
-        root4.right.left = new TreeNode(15);
-        root4.right.right=new TreeNode(7);
-
-        List<List<Integer>> integerList3 = new BinaryTreeLevelOrderTraversal_102().levelOrder(root4);
-        System.out.println("Binary tree LevelOrderTraversal  : " + integerList3 );
-
-        // Below commented data are for Class: BinaryTreeZigzagLevelOrderTraversal_103
-        TreeNode root5 = new TreeNode(1);
-        root5.left = new TreeNode(9);
-        root5.right= new TreeNode(20);
-        root5.right.left = new TreeNode(15);
-        root5.right.right=new TreeNode(7);
-
-        List<List<Integer>> integerList4 = new BinaryTreeZigzagLevelOrderTraversal_103().zigzagLevelOrder(root5);
-        System.out.println("Binary tree ZigzagLevelOrderTraversal  : " + integerList4 );
-
     }
 }

@@ -2,9 +2,10 @@ package com.leetcodeproblem;
 
 public class ProductOfArrayExceptSelf_238 {
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4};
-
-        for(int i=0; i< productExceptSelfOptimizeOne(nums).length; i++){
+       // int[] nums = {1,2,3,4};
+        //int[] nums = {0,2,3,4};
+        int[] nums = {0,0,3,4};
+       /* for(int i=0; i< productExceptSelfOptimizeOne(nums).length; i++){
             System.out.println(productExceptSelfOptimizeOne(nums)[i]);
         }
 
@@ -14,8 +15,43 @@ public class ProductOfArrayExceptSelf_238 {
 
         for(int i=0; i< productExceptSelfWithDividePattern(nums).length; i++){
             System.out.println(productExceptSelfWithDividePattern(nums)[i]);
+        }*/
+
+        int[] result= productExceptSelfSpaceOptimizeOne(nums);
+        for(int i=0; i< result.length; i++){
+            System.out.println(result[i]);
         }
 
+    }
+
+    //Method-1
+    //TimeComplexity= O(2n)-> O(n), SpaceComplexity= O(1)
+    public static int[] productExceptSelfSpaceOptimizeOne(int[] nums) {
+        int product=1;
+        int zeroCount=0;
+        for(int i=0; i<nums.length; i++){
+            if(nums[i] !=0){
+            product = product* nums[i];
+            }else {
+                zeroCount++;
+            }
+        }
+
+        for(int i=0; i< nums.length; i++){
+            if(zeroCount > 1){
+                nums[i]=0;
+            }else if(zeroCount == 1){
+                if(nums[i] == 0) {
+                    nums[i] = product;
+                }else {
+                    nums[i] =0;
+                }
+            }else {
+                nums[i] = product/ nums[i];
+            }
+        }
+
+        return nums;
     }
 
     //TimeComplexity= O(2n)-> O(n), SpaceComplexity= O(n)

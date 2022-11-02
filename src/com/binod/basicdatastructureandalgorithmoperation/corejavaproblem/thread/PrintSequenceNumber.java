@@ -2,10 +2,10 @@ package com.binod.basicdatastructureandalgorithmoperation.corejavaproblem.thread
 
 public class PrintSequenceNumber implements Runnable {
 
-    public int PRINT_NUMBERS_UPTO=10;
-    static int  number=1;
-    int remainder;
-    static Object lock=new Object();
+    private int PRINT_NUMBERS_UPTO=10;
+    private static int  number=1;
+    private int remainder;
+    private static Object lock=new Object();
 
     PrintSequenceNumber(int remainder)
     {

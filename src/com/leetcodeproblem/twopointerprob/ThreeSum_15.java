@@ -8,8 +8,8 @@ public class ThreeSum_15 {
         //https://leetcode.com/problems/3sum/
         int[] nums = {-1,0,1,2,-1,-4};
         //int[] nums = {};
-        List<List<Integer>> listList=threeSum(nums);
-        //List<List<Integer>> listList=addThreeNumber2(nums);
+       // List<List<Integer>> listList=threeSum(nums);
+        List<List<Integer>> listList=addThreeNumber2(nums);
        // List<List<Integer>> listList=addThreeNumber3(nums);
         for (List list :listList) {
             System.out.println(list);

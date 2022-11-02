@@ -1,5 +1,5 @@
 package com.leetcodeproblem;
-
+//https://leetcode.com/problems/maximum-product-subarray/
 public class MaximumProductSubarray_152 {
     public static void main(String[] args) {
         int[] nums = {2,3,-2,4};
@@ -7,7 +7,7 @@ public class MaximumProductSubarray_152 {
         System.out.println(maxProductPattern2(nums));
     }
 
-    //Pattern-1 using dp, time complexity =O(n), space complexity=O(1)
+    //Pattern-1 using kadanes, time complexity =O(n), space complexity=O(1)
     public static int maxProduct(int[] nums) {
         int prod1 = nums[0];
         int prod2 = nums[0];

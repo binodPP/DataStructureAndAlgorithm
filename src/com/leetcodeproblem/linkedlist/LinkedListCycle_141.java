@@ -11,24 +11,24 @@ public class LinkedListCycle_141 {
 
     public static void main(String[] args) {
         LinkedListCycle_141 findKth= new LinkedListCycle_141();
-        findKth.addFirst(4);
-        findKth.addFirst(0);
         findKth.addFirst(2);
         findKth.addFirst(3);
+        findKth.addFirst(0);
+        findKth.addFirst(4);
 
         //print(findKth.head);
 
-        System.out.println(hasCycle1(findKth.head));
-        System.out.println(hasCycle(findKth.head));
-        System.out.println(hasCycle3(findKth.head));
+        //System.out.println(hasCycle1(findKth.head));
+        //System.out.println(hasCycle(findKth.head));
+        //System.out.println(hasCycle3(findKth.head));
 
 
 
         //Below code is just for internal testing
         // insert cycle
-        findKth.head.next.next.next = findKth.head.next;
+        findKth.head.next.next.next = findKth.head;
 
-        if (hasCycle1(findKth.head)) {
+        if (hasCycle4(findKth.head)) {
             System.out.println("Cycle Found");
         }
         else {
@@ -53,6 +53,30 @@ public class LinkedListCycle_141 {
             if (slow == fast) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    public static boolean hasCycle4(Node head) {
+        Node temp = new Node();
+        while (head != null)
+        {
+            // This condition is for the case
+            // when there is no loop
+            if (head.next == null) {
+                return false;
+            }
+
+            // Check if next is already
+            // pointing to temp
+            if (head.next == temp) {
+                return true;
+            }
+
+            Node nextPoint= head.next;
+            head.next=temp;
+            head=nextPoint;
+
         }
         return false;
     }

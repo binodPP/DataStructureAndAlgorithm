@@ -27,7 +27,7 @@ public class PowOfXN_50 {
         }
 
         if(n < 0){
-            return (double) 1.0 / (double) result;
+            return 1.0 / result;
         }
         return result;
     }

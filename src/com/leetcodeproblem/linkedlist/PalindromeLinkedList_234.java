@@ -9,8 +9,8 @@ public class PalindromeLinkedList_234 {
 
     public static void main(String[] args) {
         PalindromeLinkedList_234 findKth= new PalindromeLinkedList_234();
-        findKth.addFirst(1);
-        findKth.addFirst(2);
+        //findKth.addFirst(1);
+        //findKth.addFirst(2);
         //findKth.addFirst(3);
         findKth.addFirst(2);
         findKth.addFirst(1);
@@ -22,34 +22,49 @@ public class PalindromeLinkedList_234 {
 
     //Pattern-2: Time=O(n), space= O(1)
     public static boolean isPalindrome(Node head) {
-        Node first=head;
-        Node reversed=reverseList(first);
-        return compareList(reversed,head);
-    }
 
-    public static boolean compareList(Node firstHalf , Node secondHalf)
-    {
-        while(firstHalf != null && secondHalf != null)
-        {
-            if(firstHalf.data != secondHalf.data){
+        if(head==null||head.next==null){
+            return true;
+        }
+
+        Node slow = head;
+        Node fast = head;
+
+        while(fast !=null && fast.next !=null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        slow = reverseList(slow);
+        Node dummy = head;
+
+        while(slow!=null) {
+            if(dummy.data != slow.data){
                 return false;
             }
-            firstHalf = firstHalf.next;
-            secondHalf = secondHalf.next;
+            dummy = dummy.next;
+            slow = slow.next;
         }
         return true;
     }
+
 
     public static Node reverseList(Node head)
     {
         if(head == null || head.next == null) {
             return head;
         }
+        Node nextPtr=null;
+        Node prevPtr= null;
 
-        Node reversedPart = reverseList(head.next);
-        head.next.next = head;
-        head.next = null;
-        return reversedPart;
+        while(head != null){
+            nextPtr= head.next;
+            head.next = prevPtr;
+            prevPtr = head;
+            head = nextPtr;
+        }
+
+        return prevPtr;
     }
 
     //Pattern-1: Time=O(n), space= O(n)

@@ -29,7 +29,7 @@ public class FirstMissingPositive_41 {
            }
        }
 
-       for(int j=0; j< len; j++){
+       for(int j=0; j<len; j++){
            if(nums[j] !=j+1){
                return j+1;
            }
@@ -45,9 +45,10 @@ public class FirstMissingPositive_41 {
             return 1;
         }
 
-        for(int i=1; i<= len; i++){
+        //int[] nums = {3,4,-1,1};
+        for(int i=1; i<=len; i++){
             boolean missingFlag=true;
-            for(int j=0; j< len; j++){
+            for(int j=0; j<len; j++){
                 if(nums[j] == i ){
                     missingFlag=false;
                     break;

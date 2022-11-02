@@ -14,21 +14,19 @@ public class IntersectionListFromTwoLinkedList {
     Node tail;
     public static void main(String[] args) {
         IntersectionListFromTwoLinkedList intersection= new IntersectionListFromTwoLinkedList();
-        intersection.addFirst(5);
-        intersection.addFirst(4);
-        intersection.addFirst(8);
-        intersection.addFirst(1);
+        intersection.addFirst(20);
+        intersection.addFirst(15);
+        intersection.addFirst(11);
+        intersection.addFirst(10);
         intersection.addFirst(4);
         intersection.print();
 
         IntersectionListFromTwoLinkedList intersection1= new IntersectionListFromTwoLinkedList();
 
-        intersection1.addFirst(5);
-        intersection1.addFirst(4);
+        intersection1.addFirst(10);
         intersection1.addFirst(8);
-        intersection1.addFirst(1);
-        intersection1.addFirst(6);
-        intersection1.addFirst(5);
+        intersection1.addFirst(4);
+        intersection1.addFirst(2);
 
         intersection1.print();
         Node node1= intersection.getIntersectionNode(intersection.head, intersection1.head);

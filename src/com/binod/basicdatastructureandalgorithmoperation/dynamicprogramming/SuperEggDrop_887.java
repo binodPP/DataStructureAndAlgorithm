@@ -19,6 +19,7 @@ public class SuperEggDrop_887 {
         return superEggDropHelper(result, k,n);
     }
 
+    //Time Complexity: O(n*k^2)., Auxiliary Space: O(n*k). 
     public int superEggDropHelper(int[][] result, int k, int n) {
         if(k==1){
             return n;

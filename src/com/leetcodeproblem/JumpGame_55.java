@@ -9,7 +9,7 @@ public class JumpGame_55 {
     public static boolean canJump(int[] nums) {
         int n = nums.length;
         int reachableIndex=0;
-        for(int i =0; i < n && i<= reachableIndex; i ++){
+        for(int i =0; i < n ; i ++){
             if(reachableIndex < i){
                 return false;
             }

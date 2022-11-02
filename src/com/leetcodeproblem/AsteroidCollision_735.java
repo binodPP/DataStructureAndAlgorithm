@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class AsteroidCollision_735 {
     public static void main(String[] args) {
-     int[] asteroids = {5,10,-5};
+     int[] asteroids = {12,10,-11};
      int[] arr=asteroidCollision(asteroids);
      for(int i=0; i<arr.length; i++){
          System.out.println(arr[i]);
@@ -33,7 +33,6 @@ public class AsteroidCollision_735 {
                }
            }
        }
-
        return stack.stream().mapToInt(i->i).toArray();
     }
 }

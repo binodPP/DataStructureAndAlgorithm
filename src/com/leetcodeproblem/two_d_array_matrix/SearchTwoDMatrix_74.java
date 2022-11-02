@@ -1,12 +1,12 @@
 package com.leetcodeproblem.two_d_array_matrix;
-
+//https://leetcode.com/problems/search-a-2d-matrix/
 public class SearchTwoDMatrix_74 {
     public static void main(String[] args) {
         int[][] matrix = {{1,3,5,7},{10,11,16,20},{23,30,34,60}};
         int target = 3;
         System.out.println(searchMatrixPattern1(matrix,target));
         //System.out.println(searchMatrixPattern2(matrix,target));
-        //System.out.println(searchMatrixPattern3(matrix,target));
+       // System.out.println(searchMatrixPattern3(matrix,target));
     }
 
     //Pattern-1, binary Search, Time complexity=O(log(m) + log(n)), space complexity=O(1)
@@ -80,8 +80,8 @@ public class SearchTwoDMatrix_74 {
         int n = matrix.length;
         int m = matrix[0].length;
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
                 if (matrix[i][j] == target) {
                     return true;
                 }

@@ -4,11 +4,11 @@ import com.sun.codemodel.internal.JForEach;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//https://leetcode.com/problems/k-diff-pairs-in-an-array/
 public class K_diffPairsInAnArray_532 {
     public static void main(String[] args) {
         int[] nums = {3,1,4,1,5};
-        int k = 2;
+        int k = 0;
 
         System.out.println(findPairs(nums,k));
     }
@@ -23,7 +23,7 @@ public class K_diffPairsInAnArray_532 {
 
         for (Map.Entry<Integer,Integer> entry: integerIntegerMap.entrySet()){
             if(k ==0){
-                if(entry.getValue() >= 2){
+                if(entry.getValue() > 1){
                     count++;
                     System.out.println("["+entry.getKey()+","+entry.getKey()+"]");
                 }

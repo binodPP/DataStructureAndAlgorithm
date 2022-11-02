@@ -2,7 +2,7 @@ package com.leetcodeproblem;
 
 public class PalindromeNumber_9 {
     public static void main(String[] args) {
-        int x=121;
+        int x=11;
         System.out.println(isPalindrome(x));
     }
 
@@ -17,6 +17,6 @@ public class PalindromeNumber_9 {
             x=x/10;
         }
 
-        return x == reverse || x == reverse/10;
+        return x == reverse || x== reverse/10;
     }
 }

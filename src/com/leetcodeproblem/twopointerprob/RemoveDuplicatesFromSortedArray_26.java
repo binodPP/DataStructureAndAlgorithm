@@ -28,7 +28,7 @@ public class RemoveDuplicatesFromSortedArray_26 {
             nums[i]=nums[j];
         }
 
-        System.out.println("Total unique element = "+ i+1);
+        //System.out.println("Total unique element = "+ i+1);
         for (int j=0; j< nums.length; j++){
             System.out.println("Unique array element : " + nums[j]);
         }

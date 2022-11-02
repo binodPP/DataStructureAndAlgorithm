@@ -6,9 +6,9 @@ import java.util.List;
 //https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 public class FindAllNumbersDisappearedInAnArray_448 {
     public static void main(String[] args) {
-     //int[] nums = {4,3,2,7,8,2,3,1};
+     int[] nums = {4,2,6,2,2,1};
         //{4,-3,-2,-7,8,2,3,1}
-        int[] nums = {2,3,4,7,11};
+       // int[] nums = {2,3,4,7,11};
         System.out.println(findDisappearedNumbers(nums));
     }
     public static List<Integer> findDisappearedNumbers(int[] nums) {

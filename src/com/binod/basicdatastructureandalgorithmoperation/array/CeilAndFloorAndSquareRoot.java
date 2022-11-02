@@ -13,6 +13,7 @@ public class CeilAndFloorAndSquareRoot {
         System.out.println("Floor Root of number is : " + findTheSquareAndFloorRoot(floorRoot));
     }
 
+    //Binary search : TC: O(LOG N), SC: O(1)
     private static int findTheSquareAndFloorRoot(int number){
         int start=1,end=number/2, result=0;// if x>1
         if(number<2){

@@ -2,7 +2,7 @@ package com.leetcodeproblem;
 //https://leetcode.com/problems/jump-game-iii/
 public class JumpGameIII_1306 {
     public static void main(String[] args) {
-        int[] arr = {4, 2, 3, 0, 3, 1, 2};
+        int[] arr = {4,2,3,0,3,1,2};
         int start = 5;
         System.out.println(canReach(arr, start));
         System.out.println(canReachPattern2(arr,start));
@@ -17,7 +17,7 @@ public class JumpGameIII_1306 {
                 return true;
             }
 
-            arr[start] = -arr[start];
+            //arr[start] = -arr[start];
 
             return canReach(arr, start + arr[start]) || canReach(arr, start - arr[start]);
 

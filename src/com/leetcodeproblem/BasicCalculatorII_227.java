@@ -4,7 +4,7 @@ import java.util.Stack;
 //https://leetcode.com/problems/basic-calculator-ii/
 public class BasicCalculatorII_227 {
     public static void main(String[] args) {
-      String s = "3+2*2";
+      String s = "31+2*2";
         System.out.println(calculate(s));
     }
 
@@ -26,7 +26,7 @@ public class BasicCalculatorII_227 {
                i--; //back to previous index*/
 
                 while(i+1 < s.length() && Character.isDigit(s.charAt(i+1))){
-                    num = num * 10 + s.charAt(i) - '0';
+                    num = num * 10 + s.charAt(i+1) - '0';
                     i++;
                 }
                if(multiplyAndDivide == 0){

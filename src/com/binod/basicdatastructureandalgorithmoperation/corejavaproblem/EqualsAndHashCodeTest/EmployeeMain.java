@@ -10,7 +10,7 @@ public class EmployeeMain {
         e1.setId(100);
         e2.setId(100);
 
-        System.out.println(e1.equals(e2));	//false
+        System.out.println(e1.equals(e2));	//true
         System.out.println(e1.hashCode());
         System.out.println(e2.hashCode());
 

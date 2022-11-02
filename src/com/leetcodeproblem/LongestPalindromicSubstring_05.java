@@ -8,6 +8,7 @@ public class LongestPalindromicSubstring_05 {
         System.out.println(new LongestPalindromicSubstring_05().longestPalindrome(s));
     }
 
+    //TC: O(N*N) , SC: O(1)
     public String longestPalindrome(String s) {
 
         for(int i=0; i< s.length(); i++){

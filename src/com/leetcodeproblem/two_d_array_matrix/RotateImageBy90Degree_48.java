@@ -4,7 +4,7 @@ package com.leetcodeproblem.two_d_array_matrix;
 public class RotateImageBy90Degree_48 {
     public static void main(String args[]) {
         int arr[][] =  {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-       // new RotateImageBy90Degree().rotateOption1(arr);
+        //new RotateImageBy90Degree_48().rotateOption1(arr);
         new RotateImageBy90Degree_48().rotateOption2(arr);
     }
 

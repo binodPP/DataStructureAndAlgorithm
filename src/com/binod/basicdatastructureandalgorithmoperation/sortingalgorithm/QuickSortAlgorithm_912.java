@@ -18,31 +18,28 @@ public class QuickSortAlgorithm_912 {
     //Time complexity= O(n * log(n)), recursion call stack space complexity= O(n)
     //imagine pivot element is last one
     public static int arrayPartition(int arr[],int low, int high){
-          int pivot = arr[high];
-          int i = low;
-          for(int j = low; j < high ; j++){
-              if(arr[j] <= pivot){
+          int pivot = high;
+          int i = low-1;
+          for(int j = low; j <= high ; j++){
+              if(arr[j] <= arr[pivot]){
+                  i++;
                   int temp = arr[i];
                   arr[i] = arr[j];
                   arr[j] = temp;
-                  i++;
               }
           }
-          int temp =arr[i];
-          arr[i] = arr[high];
-          arr[high] = temp;
           return i;
     }
 
     public static void sortAlgorithm(int array[], int low, int high){
 
-            if(high <= low)
-                return;
+            if(high > low) {
 
-            int pivotIndex= arrayPartition(array,low,high);
+                int pivotIndex = arrayPartition(array, low, high);
 
-            sortAlgorithm(array,low, pivotIndex-1);
-            sortAlgorithm(array,pivotIndex+1,high);
+                sortAlgorithm(array, low, pivotIndex - 1);
+                sortAlgorithm(array, pivotIndex + 1, high);
+            }
 
     }
 

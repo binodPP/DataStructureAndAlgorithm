@@ -1,6 +1,6 @@
 package com.binod.basicdatastructureandalgorithmoperation.corejavaproblem.thread;
 
-public class PrintOddEvenNumber {
+public class PrintOddEvenNumber{
     int counter=1;
     static int N;
 
@@ -13,22 +13,10 @@ public class PrintOddEvenNumber {
         PrintOddEvenNumber mt = new PrintOddEvenNumber();
 
         // Create thread t1
-        Thread t1 = new Thread(new Runnable() {
-            @Override
-            public void run()
-            {
-                mt.printEvenNumber();
-            }
-        });
+        Thread t1 = new Thread(() -> mt.printEvenNumber());
 
         // Create thread t2
-        Thread t2 = new Thread(new Runnable() {
-            @Override
-            public void run()
-            {
-                mt.printOddNumber();
-            }
-        });
+        Thread t2 = new Thread(() -> mt.printOddNumber());
 
         // Start both threads
         t1.start();

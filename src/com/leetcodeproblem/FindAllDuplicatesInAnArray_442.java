@@ -5,7 +5,7 @@ import java.util.List;
 //https://leetcode.com/problems/find-all-duplicates-in-an-array/
 public class FindAllDuplicatesInAnArray_442 {
     public static void main(String[] args) {
-        int[] nums = {4,3,2,7,8,2,3,1};
+        int[] nums = {4,3,3,2,7,8,2,1};
         //{4,-3,-2,-7,8,2,-3,-1}
         System.out.println(findDuplicates(nums));
     }
@@ -18,6 +18,7 @@ public class FindAllDuplicatesInAnArray_442 {
                 nums[value-1]=-1*nums[value-1];
             }else {
                 list.add(Math.abs(nums[i]));
+
             }
         }
 

@@ -53,6 +53,7 @@ public class CoinChangeProblemTotalWays_518 {
                 }
 
                 array[i][j] = includeCurrentCoins + excludeCurrentCoins;
+                //System.out.println(array[i][j]);
             }
         }
 

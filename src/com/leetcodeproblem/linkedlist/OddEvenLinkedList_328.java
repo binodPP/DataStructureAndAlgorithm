@@ -49,7 +49,7 @@ public class OddEvenLinkedList_328 {
         if(length ==0){
             System.out.println("LinkedList is empty, adding the data in it");
             head=nodeData;
-            tail=nodeData;
+            //tail=nodeData;
             length++;
         }else{
             nodeData.next=head;

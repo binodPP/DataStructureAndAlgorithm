@@ -56,11 +56,12 @@ public class FindPairCountWhoseSomeLessOrEqualToGivenNumber {
         int right=array.length-1;
         Arrays.sort(array);
 
-        while(left <=right){
+        while(left <= right){
             if(array[left]+array[right] <= 7){
-                count= count + right-left;
+                count= count + right-left+1;
                 left++;
-            }else {
+                right--;
+            }else if(array[left]+array[right] > 7) {
                 right--;
             }
         }

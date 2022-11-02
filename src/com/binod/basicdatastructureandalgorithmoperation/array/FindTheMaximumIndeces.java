@@ -1,5 +1,5 @@
 package com.binod.basicdatastructureandalgorithmoperation.array;
-
+//https://www.geeksforgeeks.org/given-an-array-arr-find-the-maximum-j-i-such-that-arrj-arri/
 public class FindTheMaximumIndeces {
     //Given an array arr[], find the maximum j – i such that arr[j] > arr[i].
     // Input: {34, 8, 10, 3, 2, 80, 30, 33, 1}

@@ -8,16 +8,17 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ConstructBSTFromPreorderTraversal_1008 {
 
     //TC: O(n)
-    public static TreeNode buildTree(int[] preorder, AtomicInteger pIndex,
+    private static int pIndex = 0;
+    public static TreeNode buildTree(int[] preorder,
                                  int min, int max)
     {
         // Base case
-        if(pIndex.get() == preorder.length){
+        if(pIndex == preorder.length){
             return null;
         }
 
         // Return if the next element of preorder traversal is not in the valid range
-        int val = preorder[pIndex.get()];
+        int val = preorder[pIndex];
 
         if(val < min || val > max){
             return null;
@@ -25,15 +26,15 @@ public class ConstructBSTFromPreorderTraversal_1008 {
 
         // Construct the root node and increment `pIndex`
         TreeNode treeNode = new TreeNode(val);
-        pIndex.incrementAndGet();
+        pIndex++;
 
         // Since all elements in the left subtree of a BST must be less
         // than the root node's value, set range as `[min, val-1]` and recur
-        treeNode.left = buildTree(preorder,pIndex,min,val);
+        treeNode.left = buildTree(preorder,min,val);
 
         // Since all elements in the right subtree of a BST must be greater
         // than the root node's value, set range as `[val+1…max]` and recur
-        treeNode.right = buildTree(preorder,pIndex,val,max);
+        treeNode.right = buildTree(preorder,val,max);
 
         return treeNode;
 
@@ -53,9 +54,8 @@ public class ConstructBSTFromPreorderTraversal_1008 {
 
 
     public static void main(String[] args) {
-        AtomicInteger pIndex= new AtomicInteger(0);
         int[] preorder= {8,5,1,7,10,12};
-        TreeNode treeNode = buildTree(preorder,pIndex,Integer.MIN_VALUE,Integer.MAX_VALUE);
+        TreeNode treeNode = buildTree(preorder,Integer.MIN_VALUE,Integer.MAX_VALUE);
 
         // print the BST
         System.out.print("Preorder traversal of BST is : " );

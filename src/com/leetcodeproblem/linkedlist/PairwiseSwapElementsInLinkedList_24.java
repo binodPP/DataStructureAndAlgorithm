@@ -26,8 +26,8 @@ public class PairwiseSwapElementsInLinkedList_24 {
     }
 
     //Time=O(n), space=O(1)
-    public void swapElementsPaireWise(Node l1){
-        Node temp=l1;
+    public void swapElementsPaireWise(Node temp){
+        //Node temp=l1;
         while(temp != null && temp.next != null){
             int data= temp.data;
             temp.data=temp.next.data;
