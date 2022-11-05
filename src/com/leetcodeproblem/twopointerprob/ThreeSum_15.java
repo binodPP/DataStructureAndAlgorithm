@@ -18,7 +18,7 @@ public class ThreeSum_15 {
     }
 
 
-    //Pattern -1, Time Complexity= O(N Power 2), space complexity= O(n)
+    //Pattern -1, Time Complexity= O(N*N + NLOG(N)), space complexity= O(n)
     public static List<List<Integer>> threeSum(int[] nums) {
 
         List<List<Integer>> ans=new ArrayList<List<Integer>>();
@@ -64,7 +64,7 @@ public class ThreeSum_15 {
         return ans;
     }
 
-    //pattern-2, Time Complexity= O(N*N*log(N)), space complexity= O(n)
+    //pattern-2, Time Complexity= O(N*N*Nlog(N)), space complexity= O(n)
     public static List<List<Integer>> addThreeNumber2(int[] nums){
         List<List<Integer>> listList = new ArrayList<>();;
         //Set<List<Integer>> listSet= new HashSet<>();

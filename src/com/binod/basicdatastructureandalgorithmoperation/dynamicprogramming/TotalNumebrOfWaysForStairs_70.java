@@ -10,7 +10,7 @@ public class TotalNumebrOfWaysForStairs_70 {
         int[] arr = new int[6 + 1];
         System.out.println(stairs.totalWaysToReachNthStairUsingTopDown(arr, 6));
 
-        System.out.println(stairs.totalWaysToReachNthStairUsingBottomUp(6));
+        System.out.println(stairs.totalWaysToReachNthStairUsingBottomUp(3));
 
         System.out.println(stairs.totalWaysToReachNthStairUsingBottomUpReduceSpaceComplexity(6));
 
