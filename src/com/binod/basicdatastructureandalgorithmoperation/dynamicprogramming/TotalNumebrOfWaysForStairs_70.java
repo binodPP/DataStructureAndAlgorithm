@@ -10,7 +10,7 @@ public class TotalNumebrOfWaysForStairs_70 {
         int[] arr = new int[6 + 1];
         System.out.println(stairs.totalWaysToReachNthStairUsingTopDown(arr, 6));
 
-        System.out.println(stairs.totalWaysToReachNthStairUsingBottomUp(3));
+        System.out.println(stairs.totalWaysToReachNthStairUsingBottomUp(4));
 
         System.out.println(stairs.totalWaysToReachNthStairUsingBottomUpReduceSpaceComplexity(6));
 
@@ -65,16 +65,21 @@ public class TotalNumebrOfWaysForStairs_70 {
     // Dynamic programming Bottom up approach
     private int totalWaysToReachNthStairUsingBottomUp(int noOfStairs){
 
-        int arr[] = new int[noOfStairs+1];
-
-        arr[0]=1;
-        arr[1]=1;
-        arr[2]=2;
-
-        for(int i = 3 ; i <= noOfStairs; i++){
-            arr[i]=arr[i-1]+arr[i-2]+arr[i-3];
+        int[] result = new int[noOfStairs+1];
+        if(noOfStairs==1){
+            return 1;
         }
-        return arr[noOfStairs];
+
+        if(noOfStairs==2){
+            return 2;
+        }
+        result[0]=0;
+        result[1]=1;
+        result[2]=2;
+        for(int i=3; i<=noOfStairs; i++){
+            result[i]=result[i-1]+result[i-2];
+        }
+        return result[noOfStairs];
     }
 
     // Dynamic programming Better version of Bottom up approach in terms of space complexity

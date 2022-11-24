@@ -2,9 +2,9 @@ package com.leetcodeproblem;
 
 public class ProductOfArrayExceptSelf_238 {
     public static void main(String[] args) {
-       // int[] nums = {1,2,3,4};
+        int[] nums = {1,2,3,4};
         //int[] nums = {0,2,3,4};
-        int[] nums = {0,0,3,4};
+        //int[] nums = {0,0,3,4};
        /* for(int i=0; i< productExceptSelfOptimizeOne(nums).length; i++){
             System.out.println(productExceptSelfOptimizeOne(nums)[i]);
         }
@@ -17,7 +17,8 @@ public class ProductOfArrayExceptSelf_238 {
             System.out.println(productExceptSelfWithDividePattern(nums)[i]);
         }*/
 
-        int[] result= productExceptSelfSpaceOptimizeOne(nums);
+        int[] result= productExceptSelf(nums);
+        //int[] result= productExceptSelfSpaceOptimizeOne(nums);
         for(int i=0; i< result.length; i++){
             System.out.println(result[i]);
         }

@@ -8,7 +8,7 @@ public class DecodeString_394 {
       String s="3[a]2[bc]";
         System.out.println(decodeString(s));
     }
-
+    //TC: O(N), SC: O(2N)=O(N)
     public static String decodeString(String s) {
         Stack strStack = new Stack();
         Stack<Integer> numStack = new Stack();

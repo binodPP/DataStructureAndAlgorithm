@@ -16,8 +16,9 @@ public class CoinChangeProblemWithMinimumCoins_322 {
         int sum = 5;
 
         //System.out.println(CoinChangeProblemWithMinimumCoins.sumOfMinimumCoinsUsingBottomUpApproach(coins, sum));
-
         System.out.println(CoinChangeProblemWithMinimumCoins_322.minimumWaysCoinsUsingBottomUpApproach(coins, sum));
+
+
 
     }
 
@@ -69,14 +70,17 @@ public class CoinChangeProblemWithMinimumCoins_322 {
         Arrays.fill(array,sum+1);
         array[0]=0;
 
-        for(int i=0 ;i < array.length; i++){
+        for(int i=1 ;i < array.length; i++){
             for(int j=0 ; j < coins.length; j++){
                 if(coins[j] <= i){
                     array[i] = Math.min(array[i],1+array[i-coins[j]]);
                 }
             }
         }
-
+        for (int i = 0; i < array.length; i++) { //this equals to the row in our matrix.
+            //this equals to the column in each row.
+            System.out.print(array[i]);
+        }
         return array[sum] > sum ? -1:array[sum];
 
     }

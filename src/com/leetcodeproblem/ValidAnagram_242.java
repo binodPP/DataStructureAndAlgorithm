@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class ValidAnagram_242 {
     public static void main(String[] args) {
-        String s = "anagram";
-        String t = "nagaram";
+        String s = "aatta";
+        String t = "atta";
 
         System.out.println(isAnagram(s, t));
     }
@@ -16,7 +16,7 @@ public class ValidAnagram_242 {
             return false;
         }
 
-        int[] array = new int[256];
+        int[] array = new int[26];
         Arrays.fill(array, 0);
         for (int i = 0; i < s.length(); i++) {
             array[s.charAt(i) - 'a']++;

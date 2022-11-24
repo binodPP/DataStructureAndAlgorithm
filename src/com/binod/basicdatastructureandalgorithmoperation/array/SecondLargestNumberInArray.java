@@ -8,16 +8,17 @@ import java.util.PriorityQueue;
  */
 public class SecondLargestNumberInArray {
     public static void main(String[] args) {
-        int[] numbers = {30, 20,50,10,25,45,42,41};;
+        int[] numbers = {11, 46,10,3,5,7};;
 
-        int largest=numbers[0];
-        int secondLargest=numbers[0];
-        int thirdLargest=numbers[0];
+        int largest=0;
+        int secondLargest=0;
+        int thirdLargest=0;
         for(int i=0 ; i< numbers.length;i++){
             if(numbers[i] > largest){
                 secondLargest=largest;
                 largest=numbers[i];
             }else if( numbers[i] > secondLargest){
+                thirdLargest=secondLargest;
                 secondLargest=numbers[i];
             }else if(numbers[i] > thirdLargest){
                 thirdLargest=numbers[i];

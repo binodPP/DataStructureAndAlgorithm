@@ -3,6 +3,7 @@ package com.leetcodeproblem;
 import java.util.HashMap;
 import java.util.Map;
 //https://leetcode.com/problems/majority-element/
+//Elements appears more then n/2
 public class MajorityElement_169 {
     public static void main(String[] args) {
         int[] nums = {3,2,3};
