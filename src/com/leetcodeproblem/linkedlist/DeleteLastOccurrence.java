@@ -13,7 +13,8 @@ public class DeleteLastOccurrence {
         lastOccurrence.addFirst(2);
         lastOccurrence.addFirst(1);
         lastOccurrence.print();
-        lastOccurrence.deleteLast(lastOccurrence.head, 3);
+        //lastOccurrence.deleteLast(lastOccurrence.head, 3);
+        lastOccurrence.deleteNode(lastOccurrence.head, 3);
         lastOccurrence.print();
 
     }
@@ -39,6 +40,20 @@ public class DeleteLastOccurrence {
         }else {
             prev.next=current.next;
         }
+    }
+
+    //Generic code to delete node from first, last, and from any position in the linked list
+    public void deleteNode(Node node, int pos){
+        Node prev=node;
+        Node current=node;
+        for(int i=1; i<=pos; i++){
+            current = current.next;
+        }
+        while(current != null && current.next != null){
+            prev= prev.next;
+            current = current.next;
+        }
+      prev.next=prev.next.next;
     }
 
     public void addFirst(int data){

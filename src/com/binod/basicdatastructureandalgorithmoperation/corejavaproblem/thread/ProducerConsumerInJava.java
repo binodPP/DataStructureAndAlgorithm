@@ -11,8 +11,8 @@ public class ProducerConsumerInJava {
         Queue<Integer> buffer = new LinkedList<>();
         int maxSize = 10;
 
-        Thread producer = new Producer(buffer, maxSize, "PRODUCER");
-        Thread consumer = new Consumer(buffer, maxSize, "CONSUMER");
+        Producer producer = new Producer(buffer, maxSize, "PRODUCER");
+        Consumer consumer = new Consumer(buffer, maxSize, "CONSUMER");
 
         producer.start();
         consumer.start(); }

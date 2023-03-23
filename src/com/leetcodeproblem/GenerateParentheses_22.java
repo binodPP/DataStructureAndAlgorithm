@@ -6,6 +6,7 @@ import java.util.List;
 public class GenerateParentheses_22 {
 
     //https://leetcode.com/problems/generate-parentheses/
+    //https://www.geeksforgeeks.org/print-all-combinations-of-balanced-parentheses/
 
     //Using backtracking recursion problem pattern
 
@@ -22,6 +23,7 @@ public class GenerateParentheses_22 {
         return list;
     }
 
+    //TC: O(2^n), SC: O(n)
     public static void generateParenthesisRecursiveCall(List<String> list,String str,int n,
                                                                 int openParenthesis, int closeParenthesis) {
         if(openParenthesis == n &&  closeParenthesis == n){

@@ -23,6 +23,7 @@ public class MinimumNumberSwapsMakeStringBalancedMinimumBalanced_1963 {
                     mismatch++;
             }
         }
+        //(mismatch + 1) to take the odd number count
         return (mismatch + 1) / 2;
     }
 }

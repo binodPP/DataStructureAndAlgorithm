@@ -35,6 +35,8 @@ public class LetterCombinationsOfPhoneNumber_17 {
         return list;
     }
 
+    //Time Complexity: O(4^n) as we get set of all possible numbers of length n. In worst case, for each number there can be 4 possibilities.
+    //Auxiliary Space: O(4^n)
     public static void letterCombinationUsingRecursivePattern(List<String> list,Map<String,String> map,String digits,
                                                  String current, int index){
         if(index ==digits.length()){

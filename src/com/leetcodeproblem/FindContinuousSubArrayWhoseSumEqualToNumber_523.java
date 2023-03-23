@@ -44,6 +44,7 @@ public class FindContinuousSubArrayWhoseSumEqualToNumber_523 {
         }*/
     }
 
+
     public boolean checkSubarraySum(int[] nums, int k) {
         Set<Integer> modSet=new HashSet();
         int currSum = 0, prevSum=0;

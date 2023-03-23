@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 //https://leetcode.com/problems/kth-largest-element-in-an-array/
 public class FindKthLargestElementInArray_215 {
     public static void main(String[] args) {
-        int[] numbers = {3,2,1,5,6,4};;
+        int[] numbers = {6,2,1,3,5,4};;
         int k =4;
         System.out.println(findKthLargest(numbers,k));
 
@@ -24,13 +24,19 @@ public class FindKthLargestElementInArray_215 {
     }
 
     //TC: O(N), SC:O(N)
+    //O(log n) time for the enqueing and dequeing methods (offer, poll, remove() and add)
+    //
+    //O(n) for the remove(Object) and contains(Object) methods
+    //
+    //O(1) for the retrieval methods (peek, element, and size)
     public static int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> q = new PriorityQueue<Integer>(k);
         for(int i: nums){
-            q.offer(i);
-
+           // q.offer(i);
+            System.out.println("$$$$$$$$$"+q.offer(i));
             if(q.size()>k){
-                q.poll();
+                //q.poll();
+                System.out.println("#######"+q.poll());
             }
         }
 
@@ -40,9 +46,9 @@ public class FindKthLargestElementInArray_215 {
     //TC: O(N), SC:O(1)
     public static int findKthLargest1(int[] nums, int k) {
         int first=nums[0];
-        int sec=nums[0];
-        int third=nums[0];
-        int fourth= nums[0];
+        int sec=Integer.MIN_VALUE;
+        int third=Integer.MIN_VALUE;
+        int fourth= Integer.MIN_VALUE;
         for(int i=1; i< nums.length ; i++){
             if(nums[i] > first){
                 fourth = third;
@@ -50,7 +56,7 @@ public class FindKthLargestElementInArray_215 {
                 sec = first;
                 first = nums[i];
             }else if(nums[i] > sec){
-                fourth = third;
+               fourth = third;
                 third = sec;
                 sec = nums[i];
             }else if(nums[i] > third){

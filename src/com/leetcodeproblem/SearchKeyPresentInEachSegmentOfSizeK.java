@@ -21,6 +21,7 @@ public class SearchKeyPresentInEachSegmentOfSizeK {
         while (i< k){
             if(array[i] ==x){
                 isAvailable = true;
+                System.out.println(array[i]);
                 i=i+k-i;
                 k=k+3;
                 if(k > array.length){
