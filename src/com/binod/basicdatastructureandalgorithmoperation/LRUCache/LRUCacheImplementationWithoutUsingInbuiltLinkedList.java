@@ -2,7 +2,8 @@ package com.binod.basicdatastructureandalgorithmoperation.LRUCache;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//https://www.enjoyalgorithms.com/blog/implement-least-recently-used-cache
+//https://www.baeldung.com/java-lru-cache
 public class LRUCacheImplementationWithoutUsingInbuiltLinkedList {
     Node head;
     Node tail;

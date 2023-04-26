@@ -1,9 +1,10 @@
 package com.leetcodeproblem;
 
 //https://www.tutorialcup.com/interview/array/arrange-even-then-odd.htm
+//https://www.geeksforgeeks.org/segregate-even-and-odd-numbers/
 public class ArrangeEvenSuchThatOddComesAfterEven {
     public static void main(String[] args) {
-     int[] nums={7,2,4,9,10,11,13,27};
+     int[] nums={12, 34, 45, 9, 8, 90, 3};
 
      arrangeOddEvenNumberInArray(nums);
      for(int i=0; i< nums.length; i++){
@@ -23,6 +24,8 @@ public class ArrangeEvenSuchThatOddComesAfterEven {
                 int temp= nums[end];
                 nums[end] = nums[left];
                 nums[left] =temp;
+                left++;
+                end--;
             }else {
                 left++;
             }
