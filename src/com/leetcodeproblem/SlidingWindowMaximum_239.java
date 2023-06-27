@@ -2,7 +2,7 @@ package com.leetcodeproblem;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-
+//https://leetcode.com/problems/sliding-window-maximum/
 public class SlidingWindowMaximum_239 {
     public static void main(String[] args) {
         //int[] nums = {1,3,-1,-3,5,3,6,7};
@@ -22,13 +22,10 @@ public class SlidingWindowMaximum_239 {
             while(deque.size() > 0 && deque.peekFirst() < i-k+1){
                 deque.pollFirst();
             }
-
             while(deque.size() > 0 && nums[deque.peekLast()] < nums[i]){
                deque.pollLast();
             }
-
             deque.offerLast(i);
-
             if(i-k+1 >= 0){
                 result[i-k+1] = nums[deque.peekFirst()];
             }
@@ -48,10 +45,8 @@ public class SlidingWindowMaximum_239 {
                     max=nums[j];
                 }
             }
-
             result[index++]=max;
         }
-
         return result;
     }
 }

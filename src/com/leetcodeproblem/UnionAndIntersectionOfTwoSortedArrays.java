@@ -12,8 +12,16 @@ public class UnionAndIntersectionOfTwoSortedArrays {
     //output : Union : {1, 2, 3, 4, 5, 6, 7}, Intersection : {3, 5}
 
     public static void main(String[] args) {
-        int[] arr1 = {1, 3, 4, 5, 7};
-        int[] arr2 = {2, 3, 5, 6};
+
+        int[] arr5 = {1, 3,3,4, 5, 7};
+        int[] arr6 = {2, 3,3,5, 6};
+
+        //for unique element below code will work
+        System.out.println(getUnionHandleDuplicateElement(arr5, arr6, arr5.length, arr6.length));
+        System.out.println(getIntersectionHandleDuplicateElement(arr5,arr6,arr5.length,arr6.length));
+
+        int[] arr1 = {1, 3,4, 5, 7};
+        int[] arr2 = {2, 3,5, 6};
 
         //for unique element below code will work
         System.out.println(getUnion(arr1, arr2, arr1.length, arr2.length));
@@ -26,39 +34,77 @@ public class UnionAndIntersectionOfTwoSortedArrays {
         System.out.println(getIntersectionForUniqueElement(arr3,arr4,arr3.length,arr4.length));
     }
 
-    //Time Complexity: O(m + n) where ‘m’ and ‘n’ are the size of the arrays
-    //Auxiliary Space: O(m*log(m)+n*log(n))
-    public static List getUnionForUniqueElement(int[] arr1, int[] arr2, int m, int n){
-        TreeSet<Integer> set = new TreeSet<>();
+    //Handling duplicate element in array
+    //Time Complexity : O(m + n)
+    //Auxiliary Space: O(1)
+    public static List getUnionHandleDuplicateElement(int[] arr, int[] arr1, int m, int n){
+        List list= new ArrayList();
+        int i=0, j=0;
+        while (i<m && j<n){
+            if(i>0 && arr[i] == arr[i-1]){
+                i++;
+                continue;
+            }
 
-        // Remove the duplicates from arr1[]
-        for (int i : arr1)
-            set.add(i);
+            if(j>0 && arr1[j] == arr1[j-1]){
+                j++;
+                continue;
+            }
 
-        // Remove duplicates from arr2[]
-        for (int i : arr2)
-            set.add(i);
+            if(arr[i]<arr1[j]){
+                list.add(arr[i]);
+                i++;
+            }else if(arr[i] > arr1[j]){
+                list.add(arr1[j]);
+                j++;
+            }else {
+                list.add(arr[i]);
+                i++;
+                j++;
+            }
+        }
 
-        // Loading set to array list
+        while(i<m){
+            list.add(arr[i]);
+            i++;
+        }
 
-        return set.stream().collect(Collectors.toList());
+        while(j<n){
+            list.add(arr1[j]);
+            j++;
+        }
+
+        return list;
     }
 
-    //Time Complexity: O(m + n) where ‘m’ and ‘n’ are the size of the arrays
-    //Auxiliary Space: O(m*log(m)+n*log(n))
-    public static List getIntersectionForUniqueElement(int[] arr1, int[] arr2, int m, int n){
-        TreeSet<Integer> set = new TreeSet<>();
-        ArrayList<Integer> list
-                = new ArrayList<>();
-        // Remove the duplicates from arr1[]
-        for (int i : arr1)
-            set.add(i);
-
-        // Remove duplicates from arr2[]
-        for (int i : arr2) {
-            if(set.contains(i) && !list.contains(i)){
-                list.add(i);
+    //Handling duplicate element in array
+    // Time Complexity : O(m + n)
+    // Auxiliary Space: O(1)
+    public static List getIntersectionHandleDuplicateElement(int[] arr, int[] arr1, int m, int n){
+        List list= new ArrayList();
+        int i=0, j=0;
+        while (i<m && j<n){
+            if(i>0 && arr[i] == arr[i-1]){
+                i++;
+                continue;
             }
+            if(arr[i]<arr1[j]){
+                i++;
+            }else if(arr[i] > arr1[j]){
+                j++;
+            }else {
+                list.add(arr[i]);
+                i++;
+                j++;
+            }
+        }
+
+        while(i<m){
+            i++;
+        }
+
+        while(j<n){
+            j++;
         }
 
         return list;
@@ -119,6 +165,44 @@ public class UnionAndIntersectionOfTwoSortedArrays {
 
         while(j<n){
             j++;
+        }
+
+        return list;
+    }
+
+    //Time Complexity: O(m + n) where ‘m’ and ‘n’ are the size of the arrays
+    //Auxiliary Space: O(m*log(m)+n*log(n))
+    public static List getUnionForUniqueElement(int[] arr1, int[] arr2, int m, int n){
+        TreeSet<Integer> set = new TreeSet<>();
+
+        // Remove the duplicates from arr1[]
+        for (int i : arr1)
+            set.add(i);
+
+        // Remove duplicates from arr2[]
+        for (int i : arr2)
+            set.add(i);
+
+        // Loading set to array list
+
+        return set.stream().collect(Collectors.toList());
+    }
+
+    //Time Complexity: O(m + n) where ‘m’ and ‘n’ are the size of the arrays
+    //Auxiliary Space: O(m*log(m)+n*log(n))
+    public static List getIntersectionForUniqueElement(int[] arr1, int[] arr2, int m, int n){
+        TreeSet<Integer> set = new TreeSet<>();
+        ArrayList<Integer> list
+                = new ArrayList<>();
+        // Remove the duplicates from arr1[]
+        for (int i : arr1)
+            set.add(i);
+
+        // Remove duplicates from arr2[]
+        for (int i : arr2) {
+            if(set.contains(i) && !list.contains(i)){
+                list.add(i);
+            }
         }
 
         return list;

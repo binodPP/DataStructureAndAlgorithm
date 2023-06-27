@@ -20,7 +20,7 @@ To use the checkboxes you must fork the repository and add an X instead of a spa
 
 ## Premium questions
 
-You can access premium question on lintcode.com
+You can access premium question on leetcode.com
 
 ## Patterns
 https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed

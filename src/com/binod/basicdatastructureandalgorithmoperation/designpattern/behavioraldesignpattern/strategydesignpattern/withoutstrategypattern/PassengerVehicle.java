@@ -1,0 +1,5 @@
+package com.binod.basicdatastructureandalgorithmoperation.designpattern.behavioraldesignpattern.strategydesignpattern.withoutstrategypattern;
+
+public class PassengerVehicle extends Vehicle{
+
+}

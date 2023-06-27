@@ -7,6 +7,7 @@ public class AverageSalaryExcludingTheMinimumAndMaximumSalary_1491 {
         System.out.println(average(salary));
     }
 
+    //TC: O(N), SC: O(1)
     public static double average(int[] salary) {
       int min=Integer.MAX_VALUE;
       int max=Integer.MIN_VALUE;

@@ -1,7 +1,7 @@
 package com.leetcodeproblem;
 
 import java.util.Arrays;
-
+//https://leetcode.com/problems/valid-anagram/
 public class ValidAnagram_242 {
     public static void main(String[] args) {
         String s = "aatta";
@@ -16,7 +16,7 @@ public class ValidAnagram_242 {
             return false;
         }
 
-        int[] array = new int[26];
+        int[] array = new int[126];
         Arrays.fill(array, 0);
         for (int i = 0; i < s.length(); i++) {
             array[s.charAt(i) - 'a']++;

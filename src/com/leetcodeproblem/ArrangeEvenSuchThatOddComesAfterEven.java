@@ -11,7 +11,7 @@ public class ArrangeEvenSuchThatOddComesAfterEven {
          System.out.println(nums[i]);
      }
     }
-
+   //TC: O(N), SC: O(1)
     public static void arrangeOddEvenNumberInArray(int[] nums){
         int left=0, end=nums.length-1;
 

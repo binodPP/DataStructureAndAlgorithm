@@ -5,13 +5,14 @@ import java.util.Stack;
 
 public class AsteroidCollision_735 {
     public static void main(String[] args) {
-     int[] asteroids = {12,10,-11};
+     int[] asteroids = {9,10,-11};
      int[] arr=asteroidCollision(asteroids);
      for(int i=0; i<arr.length; i++){
          System.out.println(arr[i]);
      }
     }
 
+    //TC:O(N), SC: O(N)
     public static int[] asteroidCollision(int[] asteroids) {
        if(asteroids.length <=1){
            return asteroids;

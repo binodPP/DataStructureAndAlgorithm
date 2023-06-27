@@ -21,7 +21,7 @@ public class SortArrayOf0s1sAnd2s_OR_SortColors_75 {
         int temp;
         while(mid <=high){
             if(array[mid] ==0){
-                temp=array[low];
+                 temp=array[low];
                 array[low]=array[mid];
                 array[mid]=temp;
                 low++;
