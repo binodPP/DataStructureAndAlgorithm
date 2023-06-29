@@ -30,7 +30,7 @@ public class MissingNumberInArray_268 {
         return n_elements_sum - sum;
     }
 
-    //Method 2: Time Complexity: O(NlogN) , Space Complexity: O(1)
+    //Method 2: Time Complexity: O(logN) , Space Complexity: O(1)
     public static int getMissingNumberPattern2(int[] nums) {
         Arrays.sort(nums);
         int left = 0, right = nums.length - 1;

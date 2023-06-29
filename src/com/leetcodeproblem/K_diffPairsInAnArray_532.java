@@ -7,7 +7,7 @@ import java.util.Map;
 //https://leetcode.com/problems/k-diff-pairs-in-an-array/
 public class K_diffPairsInAnArray_532 {
     public static void main(String[] args) {
-        int[] nums = {3,1,4,1,5};
+        int[] nums = {3,1,4,1,4};
         int k = 0;
 
         System.out.println(findPairs(nums,k));

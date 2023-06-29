@@ -3,6 +3,8 @@ package com.leetcodeproblem;
 //https://www.geeksforgeeks.org/lexicographically-next-string/
 public class LexicographicallyNextGreaterString {
 
+    //Time Complexity: O(n)
+    //Auxiliary Space: O(1)
     public static String nextWord(String str)
     {
         // if string is empty

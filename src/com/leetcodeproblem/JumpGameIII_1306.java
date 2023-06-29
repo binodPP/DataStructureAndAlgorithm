@@ -11,13 +11,14 @@ public class JumpGameIII_1306 {
     //pattern-1, Time complexity= O(n), Space complexity=O(1)
     public static boolean canReach(int[] arr, int start) {
 
-        if (start >= 0 && start < arr.length && arr[start] >= 0) {
+        if (start >= 0 && start < arr.length && arr[start] >= 0 && arr[start] <= arr.length) {
 
             if (arr[start] == 0) {
                 return true;
             }
 
-            //arr[start] = -arr[start];
+            //Resolve stackoverflow
+            arr[start] = -arr[start];
 
             return canReach(arr, start + arr[start]) || canReach(arr, start - arr[start]);
 

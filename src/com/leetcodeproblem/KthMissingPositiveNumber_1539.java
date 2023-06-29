@@ -6,13 +6,13 @@ import java.util.Set;
 //https://leetcode.com/problems/kth-missing-positive-number/
 public class KthMissingPositiveNumber_1539 {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4};
+        int[] arr = {1,2,4,5,7};
         int k = 2;
         System.out.println(findKthPositive(arr,k));
         System.out.println(findKthPositive2(arr,k));
     }
 
-    //Using Binary Search, Time complexity= O(log n) , space complexity=O(1)
+    //Using Binary Search, Time complexity= O(log n) , space compleFFxity=O(1)
     public static int findKthPositive(int[] A, int k) {
         int l = 0, r = A.length-1, m;
         while (l <= r) {

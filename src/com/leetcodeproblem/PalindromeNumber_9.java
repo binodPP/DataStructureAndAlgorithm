@@ -8,15 +8,16 @@ public class PalindromeNumber_9 {
 
     public static boolean isPalindrome(int x) {
         int reverse=0;
+        int originalNumber = x;
         if(x < 0 || (x%10 == 0 && x != 0)){
             return false;
         }
-        while(x > reverse ){
+        while(x > 0 ){
             int digit=x%10;
             reverse=reverse*10+digit;
             x=x/10;
         }
 
-        return x == reverse || x== reverse/10;
+        return originalNumber == reverse;
     }
 }

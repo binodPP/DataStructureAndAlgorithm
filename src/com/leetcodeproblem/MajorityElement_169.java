@@ -6,7 +6,7 @@ import java.util.Map;
 //Elements appears more then n/2
 public class MajorityElement_169 {
     public static void main(String[] args) {
-        int[] nums = {3,2,3};
+        int[] nums = {3,2,2,2,3,3,3};
         System.out.println(majorityElementPattern1(nums));
         System.out.println(majorityElementPattern2(nums));
     }

@@ -5,7 +5,7 @@ import java.util.Stack;
 //https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/
 public class MinimumNumberSwapsMakeStringBalancedMinimumBalanced_1963 {
     public static void main(String[] args) {
-    String s="))()(()(";
+    String s=")))()(()((";
         System.out.println(minSwaps(s));
     }
 

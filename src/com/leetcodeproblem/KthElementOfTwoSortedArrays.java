@@ -10,6 +10,7 @@ public class KthElementOfTwoSortedArrays {
         System.out.println(getElementFromSpecified(arr,arr1,arr.length, arr1.length,k));
     }
 
+    //TC: O(L), SC:O(1)
     public static int getElementFromSpecified(int[] arr, int[] arr1,int m, int n, int k){
         int i=0, j=0, l=0;
         while(i< m && j< n){
