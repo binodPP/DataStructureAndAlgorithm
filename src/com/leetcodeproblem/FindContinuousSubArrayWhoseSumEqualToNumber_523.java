@@ -24,9 +24,12 @@ public class FindContinuousSubArrayWhoseSumEqualToNumber_523 {
 
         //Iterating through inputArray starting from second element
 
-        for (int i = 0; i < inputArray.length; i++) { //Adding inputArray[i] to the current 'sum' sum = sum + inputArray[i]; //If sum is greater than inputNumber then following loop is executed until //sum becomes either smaller than or equal to inputNumber while(sum > inputNumber && start <= i-1)
+        for (int i = 0; i < inputArray.length; i++) { //Adding inputArray[i] to the current 'sum' sum = sum + inputArray[i];
+            // If sum is greater than inputNumber then following loop is executed until
+            // sum becomes either smaller than or equal to inputNumber while(sum > inputNumber && start <= i-1)
             currentSum = currentSum + inputArray[i];
             if (currentSum == inputNumber) {
+
                     System.out.println("Continious sub array are between indexex : " + left + " and " + right);
                     break;
                 } else if (currentSum < inputNumber) {
@@ -38,10 +41,6 @@ public class FindContinuousSubArrayWhoseSumEqualToNumber_523 {
                 }
 
             }
-
-        /*for(int j=left; j <= right; j++){
-            System.out.println("Subarray are : " + inputArray[j]);
-        }*/
     }
 
 

@@ -1,5 +1,6 @@
 package com.leetcodeproblem;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,6 +13,7 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
         String str="pwwkew";
 
         System.out.println(lengthOfLongestSubstring(str));
+        System.out.println(lengthOfLongestSubstringBetter(str));
 
     }
 
@@ -40,5 +42,31 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
              }
          }
          return result;
+    }
+
+    //Time Complexity = O(n), space complexity= O(1)
+    public static int lengthOfLongestSubstringBetter(String s) {
+        HashMap<Character,Integer> map = new HashMap<>();
+        int start=0;
+        int end=0;
+        int result=0;
+        if(s.length()==0){
+            return 0;
+        }
+
+        if(s.length() ==1){
+            return 1;
+        }
+
+        while (end<s.length()){
+            char c = s.charAt(end);
+            if(map.containsKey(c)){
+                start=Math.max(map.get(c),start);
+            }
+            result = Math.max(result,end-start+1);
+            map.put(c,end+1);
+            end++;
+        }
+        return result;
     }
 }
