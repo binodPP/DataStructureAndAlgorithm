@@ -1,5 +1,7 @@
 package com.leetcodeproblem;
 
+//https://leetcode.com/problems/powx-n/description/
+//https://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/
 public class PowOfXN_50 {
     public static void main(String[] args) {
         int n=10;

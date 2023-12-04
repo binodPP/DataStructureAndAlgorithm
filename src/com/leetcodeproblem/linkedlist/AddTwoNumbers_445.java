@@ -12,17 +12,16 @@ public class AddTwoNumbers_445 {
 
     public static void main(String[] args) {
         AddTwoNumbers_445 linkedList = new AddTwoNumbers_445();
-        linkedList.addFirst(3);
-        linkedList.addFirst(4);
         linkedList.addFirst(2);
-        linkedList.addFirst(7);
+        linkedList.addFirst(4);
+        linkedList.addFirst(3);
 
         linkedList.print();
 
         AddTwoNumbers_445 linkedList1 = new AddTwoNumbers_445();
-        linkedList1.addFirst(4);
-        linkedList1.addFirst(6);
         linkedList1.addFirst(5);
+        linkedList1.addFirst(6);
+        linkedList1.addFirst(4);
 
 
 
@@ -55,32 +54,44 @@ public class AddTwoNumbers_445 {
         }
 
         Node temp=null;
+        Node current = null;
         while( !stack1.isEmpty() || !stack2.isEmpty() || carry >0) {
             int sum = 0;
             sum = carry + (stack1.isEmpty()?0:stack1.pop()) + (stack2.isEmpty()?0:stack2.pop());
             carry = sum / 10;
             sum= sum% 10;
             Node node = new Node(sum);
-            node.next = temp;
-            temp = node;
+            if(current == null) {
+                current = node;
+                temp = current;
+            }else {
+                temp.next = node;
+                temp = temp.next;
+            }
         }
-        return temp;
+        return current;
     }
 
     //Pattern 2: by reversing the linked list
-    public Node addTwoNumbersLinkList(Node node1, Node node2) {
-        Node l1 = revreseLinkList1(node1);
-        Node l2 = revreseLinkList1(node2);
+    public Node addTwoNumbersLinkList(Node l1, Node l2) {
+         l1 = revreseLinkList1(l1);
+         l2 = revreseLinkList1(l2);
         int sum = 0;
         int carry = 0;
         Node temp = null;
+        Node current = null;
         while (l1 != null || l2 != null || carry >0) {
             sum = carry + (l1 !=null?l1.data:0) + (l2 !=null?l2.data:0);
                 carry = sum / 10;
             sum = sum % 10;
             Node node = new Node(sum);
-            node.next=temp;
-            temp=node;
+            if(current == null) {
+                current = node;
+                temp = current;
+            }else {
+                temp.next = node;
+                temp = temp.next;
+            }
 
             if (l1 != null) {
                 l1 = l1.next;
@@ -90,7 +101,7 @@ public class AddTwoNumbers_445 {
             }
         }
 
-        return temp;
+        return current;
     }
 
 

@@ -5,34 +5,20 @@ import java.util.Set;
 
 //https://leetcode.com/problems/linked-list-cycle/
 public class LinkedListCycle_141 {
-    int length=0;
-    Node head=null;
-    Node tail=null;
 
     public static void main(String[] args) {
-        LinkedListCycle_141 findKth= new LinkedListCycle_141();
-        findKth.addFirst(2);
-        findKth.addFirst(3);
-        findKth.addFirst(0);
-        findKth.addFirst(4);
+        Node head = new Node(3);
+        head.next = new Node(2);
+        head.next.next = new Node(0);
+        head.next.next.next = new Node(-4);
+        head.next.next.next.next = head.next; // Creating a cycle
 
-        //print(findKth.head);
-
-        //System.out.println(hasCycle1(findKth.head));
-        //System.out.println(hasCycle(findKth.head));
-        //System.out.println(hasCycle3(findKth.head));
-
-
-
-        //Below code is just for internal testing
-        // insert cycle
-        findKth.head.next.next.next = findKth.head;
-
-        if (hasCycle4(findKth.head)) {
-            System.out.println("Cycle Found");
-        }
-        else {
-            System.out.println("No Cycle Found");
+        LinkedListCycle_141 cycleStartFinder = new LinkedListCycle_141();
+        Boolean cycleStartNode = cycleStartFinder.hasCycle(head);
+        if (Boolean.TRUE.equals(cycleStartNode)) {
+            System.out.println("Cycle starts at node with value: " + cycleStartNode);
+        } else {
+            System.out.println("No cycle in the linked list.");
         }
     }
 
@@ -82,21 +68,15 @@ public class LinkedListCycle_141 {
     }
 
     //Pattern2
-    public static boolean hasCycle(Node head) {
-        Node start= null;
+    public boolean hasCycle(Node head) {
         Node slow=head;
         Node fast= head;
         while(fast != null && fast.next != null){
             slow= slow.next;
             fast= fast.next.next;
             if(slow == fast){
-                start= head;
-                while(start != slow){
-                    slow= slow.next;
-                    start= start.next;
-                }
                 return true;
-            }
+                }
         }
         return false;
     }
@@ -112,28 +92,5 @@ public class LinkedListCycle_141 {
             head = head.next;
         }
         return false;
-    }
-    public void addFirst(int data){
-        Node nodeData= new Node(data);
-        if(length ==0){
-            System.out.println("LinkedList is empty, adding the data in it");
-            head=nodeData;
-            tail=nodeData;
-            length++;
-        }else{
-            nodeData.next=head;
-            head=nodeData;
-            length++;
-        }
-    }
-
-    public static void print(Node node) {
-        System.out.println("Printing the Singly LinkedList : ");
-        StringBuffer str = new StringBuffer();
-        while (node != null) {
-            str.append(node.data).append("->");
-            System.out.println(str.toString().substring(0, str.length() - 2));
-            node = node.next;
-        }
     }
 }

@@ -9,13 +9,14 @@ public class MaximumProductSubarray_152 {
 
     //Pattern-1 using kadanes, time complexity =O(n), space complexity=O(1)
     public static int maxProduct(int[] nums) {
-        int prod1 = nums[0];
-        int prod2 = nums[0];
-        int max_so_far = nums[0];
 
         if(nums.length==0){
             return 0;
         }
+
+        int prod1 = nums[0];
+        int prod2 = nums[0];
+        int max_so_far = nums[0];
 
         if(nums.length ==1){
             return nums[0];

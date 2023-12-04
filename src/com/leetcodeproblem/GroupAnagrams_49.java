@@ -9,8 +9,8 @@ public class GroupAnagrams_49 {
         System.out.println(groupAnagrams11(strs));
     }
 
-    //Time Complexity: O(n * \log k)O(n∗logk) (k is the length of largest string)
-    //Space Complexity: O(n)O(n)
+    //Time Complexity: O(n) * n log k) + O(n) (k is the length of largest string)
+    //Space Complexity: O(n)+O(n)
     public static List<List<String>> groupAnagrams(String[] strs) {
         Map<String,List<String>> map = new HashMap<>();
         List<List<String>> list = new ArrayList<>();
@@ -40,7 +40,7 @@ public class GroupAnagrams_49 {
 
 
 
-    //oPTION-2
+    //OPTION-2
     public static List<List<String>> groupAnagrams11(String[] strs) {
         List<List<String>> result = new ArrayList<>();
         if (strs == null || strs.length == 0) {

@@ -28,8 +28,8 @@ public class StringToIntegerATOI_8 {
         }else if(s.charAt(0) == '+'){
             i++;
         }
-
-        while(s.length() > i && s.charAt(i) >= '0' && s.charAt(i)<='9'){
+       // use this while loop while(s.length() > i && s.charAt(i) >= '0' && s.charAt(i)<='9') or below one
+         while(s.length() > i && Character.isDigit(s.charAt(i))){
             result=result*10+s.charAt(i)-'0';
             i++;
         }

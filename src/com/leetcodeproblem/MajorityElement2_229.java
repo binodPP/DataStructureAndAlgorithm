@@ -5,6 +5,7 @@ import java.util.List;
 
 //https://leetcode.com/problems/majority-element-ii/
 //https://medium.com/@yzhua3/leetcode-majority-element-ii-f411b52b905a
+//https://chat.openai.com/c/4e93daa1-58bd-4e9e-b977-a04626351009
 //n/3
 public class MajorityElement2_229 {
     public static void main(String[] args) {
@@ -13,58 +14,48 @@ public class MajorityElement2_229 {
     }
 
     public static List<Integer> majorityElement(int[] nums) {
+        List<Integer> result = new ArrayList<>();
+
+        int candidate1 = 0, candidate2 = 0;
+        int count1 = 0, count2 = 0;
+
+        for (int num : nums) {
+            if (num == candidate1) {
+                count1++;
+            } else if (num == candidate2) {
+                count2++;
+            } else if (count1 == 0) {
+                candidate1 = num;
+                count1 = 1;
+            } else if (count2 == 0) {
+                candidate2 = num;
+                count2 = 1;
+            } else {
+                count1--;
+                count2--;
+            }
+        }
+
+        count1 = 0;
+        count2 = 0;
+
+        for (int num : nums) {
+            if (num == candidate1) {
+                count1++;
+            } else if (num == candidate2) {
+                count2++;
+            }
+        }
+
         int n = nums.length;
-        List<Integer> res = new ArrayList<>();
-        if (n == 0) return res;
-        if (n == 1)
-        {
-            res.add(nums[0]);
-            return res;
+        if (count1 > n / 3) {
+            result.add(candidate1);
+        }
+        if (count2 > n / 3) {
+            result.add(candidate2);
         }
 
-        Integer f = null;
-        Integer s = null;
-        int cntf = 0;
-        int cnts = 0;
-        for (int i = 0; i < n; i ++)
-        {
-            if (f == null || f == nums[i])
-            {
-                f = nums[i];
-                cntf ++;
-            }
-            else if (s == null || s == nums[i])
-            {
-                s = nums[i];
-                cnts ++;
-            }
-            else if (cntf == 0)
-            {
-                f = nums[i];
-                cntf = 1;
-            }
-            else if (cnts == 0)
-            {
-                s = nums[i];
-                cnts = 1;
-            }
-            else
-            {
-                cntf --;
-                cnts --;
-            }
-        }
-
-        cntf = 0; cnts = 0;
-        for (int i = 0; i < n; i ++)
-        {
-            if (f != null && nums[i] == f) cntf ++;
-            if (s != null && nums[i] == s) cnts ++;
-        }
-
-        if (cntf > n/3) res.add(f);
-        if (cnts > n/3) res.add(s);
-
-        return res;
+        return result;
     }
+
 }

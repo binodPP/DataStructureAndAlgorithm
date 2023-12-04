@@ -4,13 +4,15 @@ public class ReverseNumber_7 {
 
     //https://leetcode.com/problems/reverse-integer/
     public static void main(String[] args) {
-           int num=121;int reverse=0;
+           int num=1534236469;int reverse=0;
            while(num > 0 ){
                int digit=num%10;
                reverse=reverse*10+digit;
                num=num/10;
            }
         System.out.println(reverse);
+
+        System.out.println(reverse(num));
     }
 
     //There's no need for any data type other than int.
@@ -21,7 +23,7 @@ public class ReverseNumber_7 {
     //option-1 below code is for if integer is out of int range then return 0;
     // other wise use above code for simple reverse int
     //eg: input int x= 1534236469; output should return 0;
-    public int reverse(int x) {
+    public static int reverse(int x) {
         int result=0;
         while(x !=0 ){
             int digit=x%10;

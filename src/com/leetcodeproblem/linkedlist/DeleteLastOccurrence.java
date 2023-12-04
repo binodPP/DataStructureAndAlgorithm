@@ -13,7 +13,8 @@ public class DeleteLastOccurrence {
         lastOccurrence.addFirst(2);
         lastOccurrence.addFirst(1);
         lastOccurrence.print();
-        //lastOccurrence.deleteLast(lastOccurrence.head, 3);
+        lastOccurrence.deleteLast(lastOccurrence.head, 4);
+        lastOccurrence.print();
         lastOccurrence.deleteNode(lastOccurrence.head, 3);
         lastOccurrence.print();
 

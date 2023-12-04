@@ -16,7 +16,7 @@ public class UnionAndIntersectionOfTwoSortedArrays {
         int[] arr5 = {1, 3,3,4, 5, 7};
         int[] arr6 = {2, 3,3,5, 6};
 
-        //for unique element below code will work
+        //for duplicate element below code will work
         System.out.println(getUnionHandleDuplicateElement(arr5, arr6, arr5.length, arr6.length));
         System.out.println(getIntersectionHandleDuplicateElement(arr5,arr6,arr5.length,arr6.length));
 

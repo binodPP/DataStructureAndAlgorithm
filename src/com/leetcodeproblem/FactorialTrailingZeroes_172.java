@@ -7,7 +7,7 @@ public class FactorialTrailingZeroes_172 {
         System.out.println(trailingZeroes(n));
     }
 
-    //Time Complexity = O(log n), space = O(1)
+    // Time Complexity = O(log n), space = O(1)
     // 1*10 = 10(one trailing zero), 1*10*10= 100(two trailing zero) means 2*5=10 we need
     // to consider always but because 5 will always come less so we will only take 5 instead of combination (2,5)
     public static int trailingZeroes(int n) {

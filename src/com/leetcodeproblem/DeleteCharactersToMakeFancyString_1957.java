@@ -5,7 +5,6 @@ public class DeleteCharactersToMakeFancyString_1957 {
 
     public static void main(String[] args) {
         String s = "aaabaaaa";
-
         System.out.println(makeFancyString(s));
     }
 

@@ -2,7 +2,7 @@ package com.leetcodeproblem;
 //https://leetcode.com/problems/first-missing-positive/
 public class FirstMissingPositive_41 {
     public static void main(String[] args) {
-        int[] nums = {3,4,-1,1};
+        int[] nums = {3,4,2,1};
         //int[] nums={1};
         //System.out.println(firstMissingPositive(nums));
         System.out.println(firstMissingPositivePattern2(nums));
@@ -15,7 +15,6 @@ public class FirstMissingPositive_41 {
        if(len == 0){
            return 1;
        }
-
        int i=0;
        while (i<len){
            if(nums[i] > len || nums[i] <=0){
@@ -60,6 +59,6 @@ public class FirstMissingPositive_41 {
             }
         }
 
-        return 0;
+        return len+1;
     }
 }
