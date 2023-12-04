@@ -8,6 +8,7 @@ public class IntegerToRoman_12 {
     public static void main(String[] args) {
         TreeMap<Integer,String> map = new TreeMap<>();
         map.put(1000,"M");
+        map.put(900,"CM");
         map.put(500,"D");
         map.put(100,"C");
         map.put(50,"L");

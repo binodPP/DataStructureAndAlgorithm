@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 //https://leetcode.com/problems/kth-largest-element-in-an-array/
 public class FindKthLargestElementInArray_215 {
     public static void main(String[] args) {
-        int[] numbers = {6,2,1,3,5,4};;
+        int[] numbers = {3, 6, 1, 8, 4, 2, 7, 5};;
         int k =4;
         System.out.println(findKthLargest(numbers,k));
 

@@ -2,9 +2,12 @@ package com.leetcodeproblem;
 
 import java.util.Stack;
 
+//https://leetcode.com/problems/132-pattern/
+//
 public class OneThreeTwoPattern_456 {
     public static void main(String[] args) {
         int[] nums = {3,1,4,2};
+        //nums = [1,2,3,4]
         System.out.println(find132pattern(nums));
         System.out.println(find132pattern2(nums));
         System.out.println(find132pattern3(nums));

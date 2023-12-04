@@ -16,7 +16,7 @@ public class ValidAnagram_242 {
             return false;
         }
 
-        int[] array = new int[126];
+        int[] array = new int[26];
         Arrays.fill(array, 0);
         for (int i = 0; i < s.length(); i++) {
             array[s.charAt(i) - 'a']++;

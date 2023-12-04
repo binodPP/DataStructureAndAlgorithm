@@ -3,6 +3,7 @@ package com.leetcodeproblem;
 import java.util.ArrayDeque;
 import java.util.Deque;
 //https://leetcode.com/problems/sliding-window-maximum/
+//https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/
 public class SlidingWindowMaximum_239 {
     public static void main(String[] args) {
         //int[] nums = {1,3,-1,-3,5,3,6,7};

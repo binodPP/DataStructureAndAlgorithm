@@ -13,6 +13,7 @@ public class SumOfNumbersInString {
         for(int i=0; i< s.length(); i++){
             if(Character.isDigit(s.charAt(i))){
                 int num= s.charAt(i)-'0';
+                //s.charAt(i+1) >= '0' && s.charAt(i+1) <= '9'  or Character.isDigit(s.charAt(i+1)
                 while(i+1< s.length() && Character.isDigit(s.charAt(i+1))){
                     num = num*10+s.charAt(i+1)-'0';
                     i++;

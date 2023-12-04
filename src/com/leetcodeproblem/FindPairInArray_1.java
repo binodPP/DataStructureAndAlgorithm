@@ -17,7 +17,7 @@ public class FindPairInArray_1 {
         //getPairedDataUsingHashMap(array,k);
         //addTwoNumberToMatchTargetNumber(array1,target);
         addTwoNumberToMatchTargetNumberUsingTwoPointerConcept(array1,target);
-        binarySearchApproach(array1,target);
+        //binarySearchApproach(array1,target);
     }
 
     //TimeComplexity = O(nlog(n)), Space = O(1)

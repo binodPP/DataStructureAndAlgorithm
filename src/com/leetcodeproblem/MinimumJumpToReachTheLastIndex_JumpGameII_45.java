@@ -1,5 +1,7 @@
 package com.leetcodeproblem;
 
+import java.util.Arrays;
+
 public class MinimumJumpToReachTheLastIndex_JumpGameII_45 {
     //45. Jump Game II- https://leetcode.com/problems/jump-game-ii/
 
@@ -33,4 +35,29 @@ public class MinimumJumpToReachTheLastIndex_JumpGameII_45 {
         }
         return minimumJumps;
     }
+
+    //Using DP
+    public int jump(int[] nums) {
+        int n = nums.length;
+        int[] dp = new int[n]; // dp[i] stores the minimum number of jumps needed to reach index i
+
+        // Initialize dp array with maximum values
+        Arrays.fill(dp, Integer.MAX_VALUE);
+
+        dp[0] = 0; // It takes 0 jumps to reach the first index
+
+        for (int i = 1; i < n; i++) {
+            // Iterate through all the previous indices (j) and check if we can reach index i from index j
+            for (int j = 0; j < i; j++) {
+                if (j + nums[j] >= i) {
+                    // If we can reach index i from index j, update the minimum jumps needed to reach index i
+                    dp[i] = Math.min(dp[i], dp[j] + 1);
+                }
+            }
+        }
+
+        return dp[n - 1]; // Minimum jumps needed to reach the last index
+    }
+
+
 }

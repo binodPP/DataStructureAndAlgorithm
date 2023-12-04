@@ -49,27 +49,25 @@ public class IntersectionDataOfTwoLinkedList_160 {
 
         //calculate the difference and traverse the longest list till the diff count
         int diffLength=0;
-        Node currentL1=l1;
-        Node currentL2=l2;
         if(l1Length >= l2Length){
             diffLength=l1Length-l2Length;
             for(int i=1; i <= diffLength;i++){
-                currentL1=currentL1.next;
+                l1=l1.next;
             }
         }else {
             diffLength=l2Length-l1Length;
             for(int i=1; i <= diffLength;i++){
-                currentL2=currentL2.next;
+                l2=l2.next;
             }
         }
 
         //now start both the list one by one to traverse
-        while(currentL1 != null && currentL2 != null){
-            if(currentL1.data == currentL2.data){
-                return currentL1.data;
+        while(l1 != null && l2 != null){
+            if(l1.data == l2.data){
+                return l1.data;
             }
-            currentL1=currentL1.next;
-            currentL2=currentL2.next;
+            l1=l1.next;
+            l2=l2.next;
         }
 
        return -1;

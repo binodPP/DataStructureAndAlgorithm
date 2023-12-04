@@ -3,9 +3,10 @@ package com.leetcodeproblem;
 import java.util.HashSet;
 import java.util.Set;
 
-//https://leetcode.com/problems/continuous-subarray-sum/
-//https://leetcode.com/problems/continuous-subarray-sum/
-public class FindContinuousSubArrayWhoseSumEqualToNumber_523 {
+//https://www.geeksforgeeks.org/find-subarray-with-given-sum/
+
+//Non Negative
+public class FindContinuousSubArrayWhoseSumEqualToNumber {
 
     public static void main(String[] args)
     {
@@ -13,7 +14,7 @@ public class FindContinuousSubArrayWhoseSumEqualToNumber_523 {
 
         //findSubArray(new int[]{12, 5, 31, 13, 21, 8}, 49);
 
-        findSubArray(new int[]{10, 40, 3, 20, 8, 15,11}, 31);
+        findSubArray(new int[]{15, 2, 4, 8, 9, 5, 10, 23}, 23);
     }
 
     public static void findSubArray(int[] inputArray, int inputNumber) {
@@ -41,22 +42,5 @@ public class FindContinuousSubArrayWhoseSumEqualToNumber_523 {
                 }
 
             }
-    }
-
-
-    public boolean checkSubarraySum(int[] nums, int k) {
-        Set<Integer> modSet=new HashSet();
-        int currSum = 0, prevSum=0;
-        //when we add prevSum=0 in set it will actually check if currSum is divided by k
-        for(int n : nums) {
-            currSum += n;
-            if(modSet.contains(currSum%k)) {
-                return true;
-            }
-            currSum %=k;
-            modSet.add(prevSum);
-            prevSum = currSum;
-        }
-        return false;
     }
 }
