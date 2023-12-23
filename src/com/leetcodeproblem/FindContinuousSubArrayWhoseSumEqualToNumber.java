@@ -36,9 +36,9 @@ public class FindContinuousSubArrayWhoseSumEqualToNumber {
                 } else if (currentSum < inputNumber) {
                     right++;
                 } else if (currentSum > inputNumber) {
+                    currentSum = currentSum - inputArray[left];
                     left++;
-                right++;
-                    currentSum = currentSum - inputArray[left-1];
+                    right++;
                 }
 
             }

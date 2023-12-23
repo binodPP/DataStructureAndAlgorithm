@@ -3,6 +3,7 @@ package com.leetcodeproblem;
 import java.util.ArrayList;
 import java.util.List;
 
+//https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
 public class KidsWithTheGreatestNumberOfCandies_1431 {
     public static void main(String[] args) {
         int[] candies = {4,2,1,1,2};

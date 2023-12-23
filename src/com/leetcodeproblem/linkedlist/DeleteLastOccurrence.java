@@ -6,21 +6,21 @@ public class DeleteLastOccurrence {
     Node tail;
     public static void main(String[] args) {
         DeleteLastOccurrence lastOccurrence= new DeleteLastOccurrence();
+        lastOccurrence.addFirst(9);
+        lastOccurrence.addFirst(8);
         lastOccurrence.addFirst(6);
-        lastOccurrence.addFirst(5);
-        lastOccurrence.addFirst(4);
         lastOccurrence.addFirst(3);
+        lastOccurrence.addFirst(4);
         lastOccurrence.addFirst(2);
-        lastOccurrence.addFirst(1);
         lastOccurrence.print();
-        lastOccurrence.deleteLast(lastOccurrence.head, 4);
-        lastOccurrence.print();
-        lastOccurrence.deleteNode(lastOccurrence.head, 3);
+       // lastOccurrence.deleteLast(lastOccurrence.head, 4);
+       // lastOccurrence.print();
+        lastOccurrence.deleteNode(lastOccurrence.head, 6);
         lastOccurrence.print();
 
     }
 
-    //Generic code to delete node from first, last, and from any position in the linked list
+    //Generic code to delete node from first, last, and from any position by matching key in the linked list
     public void deleteLast(Node node, int key){
         Node prev=node;
         Node current=node.next;
@@ -45,16 +45,23 @@ public class DeleteLastOccurrence {
 
     //Generic code to delete node from first, last, and from any position in the linked list
     public void deleteNode(Node node, int pos){
-        Node prev=node;
+        Node prev= null;
         Node current=node;
-        for(int i=1; i<=pos; i++){
-            current = current.next;
+        if(pos == 1){
+            head = current.next;
+        }else {
+            for (int i = 1; i < pos; i++) {
+                prev = current;
+                current = current.next;
+            }
+
+            if (current.next == null) {
+                prev.next = null;
+            } else {
+                prev.next = current.next;
+            }
         }
-        while(current != null && current.next != null){
-            prev= prev.next;
-            current = current.next;
-        }
-      prev.next=prev.next.next;
+
     }
 
     public void addFirst(int data){

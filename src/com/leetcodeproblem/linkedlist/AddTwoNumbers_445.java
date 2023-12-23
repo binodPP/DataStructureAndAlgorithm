@@ -76,12 +76,11 @@ public class AddTwoNumbers_445 {
     public Node addTwoNumbersLinkList(Node l1, Node l2) {
          l1 = revreseLinkList1(l1);
          l2 = revreseLinkList1(l2);
-        int sum = 0;
         int carry = 0;
         Node temp = null;
         Node current = null;
         while (l1 != null || l2 != null || carry >0) {
-            sum = carry + (l1 !=null?l1.data:0) + (l2 !=null?l2.data:0);
+            int sum = carry + (l1 !=null?l1.data:0) + (l2 !=null?l2.data:0);
                 carry = sum / 10;
             sum = sum % 10;
             Node node = new Node(sum);
