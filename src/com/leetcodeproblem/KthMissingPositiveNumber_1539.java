@@ -6,7 +6,7 @@ import java.util.Set;
 //https://leetcode.com/problems/kth-missing-positive-number/
 public class KthMissingPositiveNumber_1539 {
     public static void main(String[] args) {
-        int[] arr = {1,2,4,5,7};
+        int[] arr = {1,3,4,6,7};
         int k = 2;
         System.out.println(findKthPositive(arr,k));
         System.out.println(findKthPositive2(arr,k));

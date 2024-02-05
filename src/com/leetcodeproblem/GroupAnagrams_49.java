@@ -40,7 +40,7 @@ public class GroupAnagrams_49 {
 
 
 
-    //OPTION-2
+    //OPTION-2 : Time Complexity: O(n) * 26 = O(n), SC= O(n)
     public static List<List<String>> groupAnagrams11(String[] strs) {
         List<List<String>> result = new ArrayList<>();
         if (strs == null || strs.length == 0) {

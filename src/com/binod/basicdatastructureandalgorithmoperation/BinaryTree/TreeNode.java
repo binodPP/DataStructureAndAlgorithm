@@ -22,20 +22,6 @@ public class TreeNode {
         List<Integer> result = new FlipBinaryTreeToMatchPreorderTraversal_971().flipMatchVoyage(root1, voyage);
         System.out.println("Level order traversal of given tree : " + result);
 
-        // Below commented data are for Class: ConstructBinaryTreeFromPreorderAndInorderTraversal
-
-        int[] preOrder = {3,4,9,20,15,7};
-        int[] inOrder = {9,4,3,15,20,7};
-
-        TreeNode treeNode = new ConstructBinaryTreeFromPreorderAndInorderTraversal_105().buildTree(preOrder,inOrder);
-        System.out.println("Constructed thr Binary tree from preOrder and In order  : " + treeNode );
-
-        // Below commented data are for Class: ConstructBinaryTreeFromPreorderAndPostorderTraversal
-        int[] preOrder1 = {1,2,4,5,3,6,7};
-        int[] postOrder = {4,5,2,6,7,3,1};
-
-        TreeNode treeNode1 = new ConstructBinaryTreeFromPreorderAndPostorderTraversal_889().constructFromPrePost(preOrder1,postOrder);
-        System.out.println("Constructed thr Binary tree from preOrder and In order  : " + treeNode1 );
 
         // Below commented data are for Class: ConstructBinaryTreeFromInorderAndPostorderTraversal
         int[] inOrder1 = {9,3,15,20,7};

@@ -2,9 +2,20 @@ package com.binod.basicdatastructureandalgorithmoperation.designpattern.creation
 
 public class TestDesignPatterns {
     public static void main(String[] args) {
-        Computer pc = ComputerFactoryEntryClass.getComputer(new PCFactory("2 GB","500 GB","2.4 GHz"));
-        Computer server = ComputerFactoryEntryClass.getComputer(new ServerFactory("16 GB","1 TB","2.9 GHz"));
-        System.out.println("AbstractFactory PC Config::"+pc.getCPU());
-        System.out.println("AbstractFactory Server Config::"+server.getCPU());
+        AbstractFactory abstractFactory = new PCAndIbmFactory("2 GB", "IBM");
+        System.out.println(abstractFactory);
+        Computer pc = abstractFactory.createComputer();
+        ManufactureCompany ibmCompany = abstractFactory.manufactureCompany();
+        System.out.println(pc.getRAM());
+        System.out.println(ibmCompany.brand());
+
+        System.out.println("=====================================");
+
+        AbstractFactory abstractFactory1 = new ServerAndIntelFactory("16 GB", "INTEL");
+        System.out.println(abstractFactory1);
+        Computer server = abstractFactory1.createComputer();
+        ManufactureCompany intelCompany = abstractFactory1.manufactureCompany();
+        System.out.println(server.getRAM());
+        System.out.println(intelCompany.brand());
     }
 }

@@ -33,7 +33,6 @@ public class MajorityElement_169 {
     //Pattern2: Time complexity= O(n), space complexity= O(n)
     public static int majorityElementPattern2(int[] nums) {
         Map<Integer,Integer> map= new HashMap<>();
-        int count=0;
         int ans=0;
 
         for(int i=0; i<nums.length; i++){
@@ -45,8 +44,7 @@ public class MajorityElement_169 {
         }
 
         for (Map.Entry<Integer,Integer> entry:map.entrySet()) {
-            if(count < entry.getValue()){
-                count = entry.getValue();
+            if(nums.length/2 < entry.getValue()){
                 ans=entry.getKey();
             }
         }

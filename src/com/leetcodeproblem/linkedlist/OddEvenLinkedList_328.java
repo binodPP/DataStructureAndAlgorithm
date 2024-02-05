@@ -20,8 +20,19 @@ public class OddEvenLinkedList_328 {
         //print(findKth.head);
 
         print(oddEvenList(findKth.head));
+
+        Node head = new Node(2);
+        head.next = new Node(1);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(5);
+        head.next.next.next.next = new Node(6);
+        head.next.next.next.next.next = new Node(4);
+        head.next.next.next.next.next.next = new Node(7);
+
+        print(oddEvenList(head));
     }
 
+    //Note: The first node is considered odd, and the second node is even, and so on.
     //TimeComplexity= O(n), space= O(1)
     public static Node oddEvenList(Node head) {
 

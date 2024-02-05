@@ -9,7 +9,7 @@ public class SlidingWindowMaximum_239 {
         //int[] nums = {1,3,-1,-3,5,3,6,7};
         int[] nums = {1,3,1,2,0,5};
         int k = 3;
-        int result[] = maxSlidingWindowPattern1(nums,k);
+        int result[] = maxSlidingWindow1(nums,k);
         for (int i=0; i<result.length; i++){
             System.out.println(result[i]);
         }
@@ -48,6 +48,36 @@ public class SlidingWindowMaximum_239 {
             }
             result[index++]=max;
         }
+        return result;
+    }
+
+    public static int[] maxSlidingWindow1(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return new int[0];
+        }
+
+        int n = nums.length;
+        int[] leftMax = new int[n];
+        int[] rightMax = new int[n];
+        int[] result = new int[n - k + 1];
+
+        // Fill leftMax array
+        leftMax[0] = nums[0];
+        for (int i = 1; i < n; i++) {
+            leftMax[i] = (i % k == 0) ? nums[i] : Math.max(leftMax[i - 1], nums[i]);
+        }
+
+        // Fill rightMax array
+        rightMax[n - 1] = nums[n - 1];
+        for (int i = n - 2; i >= 0; i--) {
+            rightMax[i] = (i % k == k - 1) ? nums[i] : Math.max(rightMax[i + 1], nums[i]);
+        }
+
+        // Fill result array
+        for (int i = 0; i <= n - k; i++) {
+            result[i] = Math.max(rightMax[i], leftMax[i + k - 1]);
+        }
+
         return result;
     }
 }

@@ -2,12 +2,13 @@ package com.binod.basicdatastructureandalgorithmoperation.designpattern.structur
 
 public class main {
     public static void main(String[] args) {
-        BasePizza basePizza = new VegBasePizza();
-        BasePizza basePizza1 = new FarmBasePizza();
+        BasePizza basePizza = new BasePizzaTopping();
         System.out.println(basePizza.cost());
+        BasePizza basePizza1 = new CheeseBasePizzaTopping(basePizza);
         System.out.println(basePizza1.cost());
-
-        BasePizza basePizza2 = new CheeseBasePizzaTopping(new VegBasePizza());
+        BasePizza basePizza2 = new FarmBasePizzaTopping(basePizza);
         System.out.println(basePizza2.cost());
+        BasePizza basePizza3 = new VegBasePizzaTopping(basePizza);
+        System.out.println(basePizza3.cost());
     }
 }

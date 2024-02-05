@@ -2,7 +2,6 @@ package com.binod.basicdatastructureandalgorithmoperation.BinaryTree;
 
 //https://leetcode.com/problems/balanced-binary-tree/
 public class BalancedBinaryTree_110 {
-    private boolean isBalancedFlag=true;
     public static void main(String[] args) {
         TreeNode treeNode = new TreeNode(3);
         treeNode.left = new TreeNode(9);
@@ -14,21 +13,23 @@ public class BalancedBinaryTree_110 {
     }
 
     public boolean isBalanced(TreeNode root) {
-      isBalancedDFSHelper(root);
-      return isBalancedFlag;
+        if(root == null){
+            return true;
+        }
+      int left = getHeight(root.left);
+      int right = getHeight(root.right);
+      if(Math.abs(left-right) > 1){
+          return false;
+      }
+      return true;
     }
 
-    public int isBalancedDFSHelper(TreeNode root) {
-      if(root == null){
+    public int getHeight(TreeNode node) {
+      if(node == null){
           return 0;
       }
-
-      int left = isBalancedDFSHelper(root.left);
-      int right = isBalancedDFSHelper(root.right);
-      if(Math.abs(left-right)>1){
-          isBalancedFlag = false;
-      }
-
-      return 1+Math.max(left, right);
+      int left = getHeight(node.left);
+      int right = getHeight(node.right);
+      return Math.max(left, right) + 1;
     }
 }

@@ -6,7 +6,7 @@ public class MinimumJumpToReachTheLastIndex_JumpGameII_45 {
     //45. Jump Game II- https://leetcode.com/problems/jump-game-ii/
 
     public static void main(String[] args) {
-        int[] array = {2,1,1,1,4};
+        int[] array = {2,3,1,1,4};
 
         System.out.println(MinimumJumpToReachTheLastIndex_JumpGameII_45.minimumJumpToLastIndex(array));
     }

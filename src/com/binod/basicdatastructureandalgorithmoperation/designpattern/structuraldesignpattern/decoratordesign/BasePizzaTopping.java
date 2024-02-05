@@ -1,14 +1,8 @@
 package com.binod.basicdatastructureandalgorithmoperation.designpattern.structuraldesignpattern.decoratordesign;
 
-public abstract class BasePizzaTopping implements BasePizza{
-    protected BasePizza basePizza;
-
-    public BasePizzaTopping(BasePizza basePizza){
-        this.basePizza = basePizza;
-    }
-
+public class BasePizzaTopping implements BasePizza{
     @Override
-    public int cost(){
-        return basePizza.cost();
+    public int cost() {
+        return 10;
     }
 }

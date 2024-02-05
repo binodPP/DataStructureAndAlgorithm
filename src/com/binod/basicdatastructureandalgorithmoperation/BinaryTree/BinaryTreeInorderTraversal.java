@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class BinaryTreeInorderTraversal {
     //Method 1: using recursive approach
-    /*List<Integer> list = new ArrayList<>();
+    List<Integer> list = new ArrayList<>();
     public List<Integer> inorderTraversal(TreeNode root) {
       return constructInOrderFromBinaryTree(root);
     }
@@ -24,11 +24,11 @@ public class BinaryTreeInorderTraversal {
             constructInOrderFromBinaryTree(treeNode.right);
         }
         return list;
-    }*/
+    }
 
     //Method 2: iterative approach
 
-    public List<Integer> inorderTraversal(TreeNode root) {
+   /* public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         TreeNode treeNode = root;
@@ -43,5 +43,5 @@ public class BinaryTreeInorderTraversal {
             }
         }
         return list;
-    }
+    }*/
 }

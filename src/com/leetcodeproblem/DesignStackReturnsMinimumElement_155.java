@@ -58,7 +58,7 @@ public class DesignStackReturnsMinimumElement_155 {
             minStack.push(4);
             System.out.println(minStack.top());    // Output: 4
             minStack.pop();
-            System.out.println(minStack.top());    // Output: 0
+            System.out.println(minStack.top());    // Output: -3
             System.out.println(minStack.getMin()); // Output: -3
 
 

@@ -6,13 +6,6 @@ import com.binod.basicdatastructureandalgorithmoperation.designpattern.behaviora
 //https://github.com/keertipurswani/Uber-Ola-Low-Level-Design
 public class main {
     public static void main(String[] args) {
-        /*Vehicle vehicle = new GoodsVehicle(new SportsDriveStrategy());
-        vehicle.drive();
-        Vehicle vehicle1 = new PassengerVehicle(new NormalDriveStrategy());
-        vehicle1.drive();
-        Vehicle vehicle2 = new GoodsVehicle(new SportsDriveStrategy());
-        vehicle2.drive();
-*/
 
         VehicleManager vehicleManager = new VehicleManager(new SportsDriveStrategy());
         vehicleManager.drive();

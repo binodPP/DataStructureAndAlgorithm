@@ -44,7 +44,7 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
          return result;
     }
 
-    //Time Complexity = O(n), space complexity= O(1)
+    //Time Complexity = O(n), space complexity= O(n)
     public static int lengthOfLongestSubstringBetter(String s) {
         HashMap<Character,Integer> map = new HashMap<>();
         int start=0;

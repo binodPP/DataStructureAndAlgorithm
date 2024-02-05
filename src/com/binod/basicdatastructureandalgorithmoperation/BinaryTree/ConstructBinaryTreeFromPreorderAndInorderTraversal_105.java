@@ -5,32 +5,55 @@ import java.util.Map;
 
 public class ConstructBinaryTreeFromPreorderAndInorderTraversal_105 {
 
-    //Method 1.
-    public TreeNode buildTree(int[] preorder, int[] inorder) {
-        int preStart=0;
-        int preEnd=preorder.length-1;
-        int inStart= 0;
-        int inEnd=inorder.length-1;
-        TreeNode treeNode = constructBinaryTree(preStart,preEnd,preorder,inStart,inEnd,inorder);
-        return treeNode;
+    public static void main(String[] args) {
+        ConstructBinaryTreeFromPreorderAndInorderTraversal_105 treeConstructor =
+                new ConstructBinaryTreeFromPreorderAndInorderTraversal_105();
+
+        int[] preorder = {3, 9, 20, 15, 7};
+        int[] inorder = {9, 3, 15, 20, 7};
+
+        TreeNode root = treeConstructor.buildTree(preorder,inorder);
+
+        System.out.println("Inorder traversal of the constructed tree:");
+        treeConstructor.inorderTraversal(root);
     }
 
-    public TreeNode constructBinaryTree(int preStart, int preEnd , int[] preOrder, int inStart, int inEnd , int[] inOrder){
-        if(preStart > preEnd || inStart > inEnd){
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        return buildTreeHelper(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
+    }
+
+    private TreeNode buildTreeHelper(int[] preorder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd) {
+        if (preStart > preEnd || inStart > inEnd) {
             return null;
         }
-        TreeNode root= new TreeNode(preOrder[preStart]);
-          int j=0;
-          int i=0;
-          for(i=0; i<inOrder.length;i++){
-              if(preOrder[preStart] == inOrder[i]){
-                 break;
-              }
-          }
-          j=i-inStart;
-        root.left = constructBinaryTree(preStart+1, preEnd, preOrder,inStart,i-1,inOrder);
-        root.right = constructBinaryTree(preStart+j+1, preEnd, preOrder,i+1,inEnd,inOrder);
+
+        int rootValue = preorder[preStart];
+        TreeNode root = new TreeNode(rootValue);
+
+        // Find the index of the root value in inorder array
+        int rootIndexInorder = 0;
+        for (int i = inStart; i <= inEnd; i++) {
+            if (inorder[i] == rootValue) {
+                rootIndexInorder = i;
+                break;
+            }
+        }
+
+        // Recursively build left and right subtrees
+        int leftSubtreeSize = rootIndexInorder - inStart;
+        root.left = buildTreeHelper(preorder, preStart + 1, preStart + leftSubtreeSize, inorder, inStart, rootIndexInorder - 1);
+        root.right = buildTreeHelper(preorder, preStart + leftSubtreeSize + 1, preEnd, inorder, rootIndexInorder + 1, inEnd);
+
         return root;
+    }
+
+    // Helper method to perform inorder traversal and print the elements
+    public void inorderTraversal(TreeNode root) {
+        if (root != null) {
+            inorderTraversal(root.left);
+            System.out.print(root.val + " ");
+            inorderTraversal(root.right);
+        }
     }
 
     //Method 2.

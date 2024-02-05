@@ -48,29 +48,22 @@ public class IntersectionListFromTwoLinkedList {
             return l2;
         }
 
-        Node result=null;
-        Node current= null;
+        Node dummy=new Node(0);
+        Node current= dummy;
         while (l1 !=null && l2 !=null){
             if(l1.data < l2.data){
                 l1=l1.next;
             }else if(l1.data > l2.data){
                 l2=l2.next;
             }else {
-               Node temp= new Node(l1.data);
-               if(result == null){
-                   result=temp;
-                   current=result;
-               }else {
-                   current.next=temp;
-                   current=current.next;
-               }
-
+               current.next = new Node(l1.data);
+               current = current.next;
                l1=l1.next;
                l2=l2.next;
             }
         }
 
-        return result;
+        return dummy.next;
     }
 
 

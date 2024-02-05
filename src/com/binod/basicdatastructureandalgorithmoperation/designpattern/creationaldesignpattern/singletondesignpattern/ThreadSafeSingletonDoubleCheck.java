@@ -34,8 +34,11 @@ public class ThreadSafeSingletonDoubleCheck implements Cloneable, Serializable {
     // to restrict not to create multiple instance using clone, need to use below code
     @Override
     protected Object clone() throws CloneNotSupportedException {
+        //return super.clone();
         return new CloneNotSupportedException();
     }
+
+
 
     public static void main(String[] args) {
         ThreadSafeSingletonDoubleCheck multiThreadedWithPerformance1 = ThreadSafeSingletonDoubleCheck.getInstanceMultiThreadedWithPerformance();

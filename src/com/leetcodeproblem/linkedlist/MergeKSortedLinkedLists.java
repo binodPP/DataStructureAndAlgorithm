@@ -47,18 +47,8 @@ public class MergeKSortedLinkedLists {
          if (list2==null){
              return list1;
          }
-         Node result=null;
-         if(list1 !=null && list2 !=null){
-             if(list1.data<=list2.data){
-                 result=list1;
-                 list1=list1.next;
-             }else {
-                 result=list2;
-                 list2=list2.next;
-             }
-         }
-
-         Node current=result;
+         Node dummy=new Node(0);
+         Node current = dummy;
 
          while (list1 !=null && list2 !=null){
              if(list1.data<=list2.data){
@@ -76,7 +66,7 @@ public class MergeKSortedLinkedLists {
          if(list2 !=null){
              current.next=list2;
          }
-        return result;
+        return dummy.next;
     }
 
     public static void print(Node l1) {

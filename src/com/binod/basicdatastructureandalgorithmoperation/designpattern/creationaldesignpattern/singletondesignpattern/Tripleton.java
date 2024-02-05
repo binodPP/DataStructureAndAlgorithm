@@ -22,11 +22,15 @@ public class Tripleton {
         Tripleton multiThreadedWithPerformance2 = Tripleton.getInstance();
         Tripleton multiThreadedWithPerformance3 = Tripleton.getInstance();
         Tripleton multiThreadedWithPerformance4 = Tripleton.getInstance();
+        Tripleton multiThreadedWithPerformance5 = Tripleton.getInstance();
+        Tripleton multiThreadedWithPerformance6 = Tripleton.getInstance();
 
         System.out.println("Hashcode of multiThreadedWithPerformance1: "+multiThreadedWithPerformance1.hashCode());
         System.out.println("Hashcode of multiThreadedWithPerformance2: "+multiThreadedWithPerformance2.hashCode());
         System.out.println("Hashcode of multiThreadedWithPerformance3: "+multiThreadedWithPerformance3.hashCode());
         System.out.println("Hashcode of multiThreadedWithPerformance4: "+multiThreadedWithPerformance4.hashCode());
+        System.out.println("Hashcode of multiThreadedWithPerformance3: "+multiThreadedWithPerformance5.hashCode());
+        System.out.println("Hashcode of multiThreadedWithPerformance4: "+multiThreadedWithPerformance6.hashCode());
 
     }
 }

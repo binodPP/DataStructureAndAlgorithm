@@ -23,12 +23,17 @@ public class FindKthLargestElementInArray_215 {
 
     }
 
-    //TC: O(N), SC:O(N)
-    //O(log n) time for the enqueing and dequeing methods (offer, poll, remove() and add)
+    //Building the initial PriorityQueue of size k: O(k * log(k)). Each insertion operation (offer()) takes O(log(k)) time, and there are k elements.
+    //Iterating through the array nums: O(n), where n is the length of the array.
+    //Within the loop:
+    //Insertion operation (offer()): O(log(k)) if the size of the PriorityQueue is less than k.
+    //Polling operation (poll()): O(log(k)) if the size of the PriorityQueue exceeds k.
+    //Overall time complexity: O(n * log(k)).
+    //Space Complexity:
     //
-    //O(n) for the remove(Object) and contains(Object) methods
-    //
-    //O(1) for the retrieval methods (peek, element, and size)
+    //Space required for the PriorityQueue: O(k). The PriorityQueue stores at most k elements.
+    //Additional space used for variables and the input array nums: O(n + k).
+    //Overall space complexity: O(n + k).
     public static int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> q = new PriorityQueue<Integer>(k);
         for(int i: nums){

@@ -24,46 +24,30 @@ public class MergedTwoSortedLinkedList_21 {
         //System.out.println("Find KTH Element is : " + findKth.findKthDataFromEndSecondMethod(findKth,3));
     }
 
-    //Time Complexity=O(M+N), Space Complexity=O(1)
     public static Node mergedTwoLinkedList(Node l1, Node l2){
-        Node sorted = null;
+        Node dummy = new Node(0);
+        Node current = dummy;
         if(l1 == null){
             return l2;
         }else if(l2 == null){
             return l1;
         }
-
-        if(l1 !=null && l2 !=null){
-            if(l1.data <= l2.data){
-              sorted=l1;
-              l1=l1.next;
-            }else{
-                sorted=l2;
-                l2=l2.next;
-            }
-        }
-
-        Node mergedTail = sorted;
-
         while (l1 !=null && l2 !=null){
-
             if(l1.data <= l2.data){
-                mergedTail.next=l1;
+                current.next=l1;
                 l1=l1.next;
             }else {
-                mergedTail.next=l2;
+                current.next=l2;
                 l2=l2.next;
             }
-            mergedTail = mergedTail.next;
-
+            current = current.next;
         }
         if(l1 == null){
-            mergedTail.next=l2;
-
+            current.next=l2;
         }else if(l2 == null){
-            mergedTail.next=l1;
+            current.next=l1;
         }
-        return sorted;
+        return dummy.next;
     }
 
 

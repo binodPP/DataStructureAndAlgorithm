@@ -10,27 +10,26 @@ public class AddTwoNumbers_445 {
     Node head;
     Node tail;
 
-    public static void main(String[] args) {
-        AddTwoNumbers_445 linkedList = new AddTwoNumbers_445();
-        linkedList.addFirst(2);
-        linkedList.addFirst(4);
-        linkedList.addFirst(3);
+   /* public static void main(String[] args) {
+        Node node = new Node(3);
+        node.next= new Node(4);
+        node.next.next = new Node(2);
 
-        linkedList.print();
-
-        AddTwoNumbers_445 linkedList1 = new AddTwoNumbers_445();
-        linkedList1.addFirst(5);
-        linkedList1.addFirst(6);
-        linkedList1.addFirst(4);
-
-
-
-        linkedList1.print();
-
-        Node node= new AddTwoNumbers_445().addTwoNumbers(linkedList.head,linkedList1.head);
-        Node node1= new AddTwoNumbers_445().addTwoNumbersLinkList(linkedList.head,linkedList1.head);
         print(node);
+
+        Node node1 = new Node(4);
+        node1.next = new Node(6);
+        node1.next.next = new Node(5);
+
         print(node1);
+
+        Node node2= new AddTwoNumbers_445().addTwoNumbers(node,node1);
+        Node node3= new AddTwoNumbers_445().addTwoNumbersLinkList(node,node1);
+
+        Node node4= new AddTwoNumbers_445().addTwoNumbers_1(node,node1);
+        print(node2);
+        print(node3);
+        print(node4);
     }
 
     //Pattern 1: without reversing the linked list
@@ -148,5 +147,75 @@ public class AddTwoNumbers_445 {
             System.out.println(str.toString().substring(0, str.length() - 2));
             node = node.next;
         }
+    }*/
+
+
+    public Node addTwoNumbers_1(Node l1, Node l2) {
+        Node dummyHead = new Node(0);
+        Node current = dummyHead;
+        int carry = 0;
+
+        while (l1 != null || l2 != null || carry >0) {
+            int x = (l1 != null) ? l1.data : 0;
+            int y = (l2 != null) ? l2.data : 0;
+
+            int sum = x + y + carry;
+            carry = sum / 10;
+
+            current.next = new Node(sum % 10);
+            current = current.next;
+
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+        }
+
+        return dummyHead.next;
+    }
+
+    public static void main(String[] args) {
+        AddTwoNumbers_445 solution = new AddTwoNumbers_445();
+
+        // Example usage:
+        int[] arr1 = {9, 4, 3}; // Represents the number 342
+        int[] arr2 = {5, 6, 4}; // Represents the number 465
+
+        Node l1 = solution.createLinkedList(arr1);
+        Node l2 = solution.createLinkedList(arr2);
+
+        System.out.println("Input Linked Lists:");
+        solution.printLinkedList(l1);
+        solution.printLinkedList(l2);
+
+        Node result = solution.addTwoNumbers_1(l1, l2);
+
+        System.out.println("Sum Linked List:");
+        solution.printLinkedList(result);
+    }
+
+    // Helper method to create a linked list from an array of integers
+    private Node createLinkedList(int[] nums) {
+        Node dummyHead = new Node(0);
+        Node current = dummyHead;
+
+        for (int num : nums) {
+            current.next = new Node(num);
+            current = current.next;
+        }
+
+        return dummyHead.next;
+    }
+
+    // Helper method to print the linked list
+    private void printLinkedList(Node head) {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
     }
 }

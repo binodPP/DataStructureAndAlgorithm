@@ -20,7 +20,10 @@ public class JumpGameIII_1306 {
                 return true;
             }
 
-            //Resolve stackoverflow
+            //The line arr[start] = -arr[start]; in the given code is a technique used to mark
+            // the visited indices while performing a depth-first search (DFS) traversal to avoid revisiting
+            // the same indices and getting stuck in an infinite loop,
+            // thereby resolving potential stack overflow errors.
             arr[start] = -arr[start];
 
             return canReach(arr, start + arr[start]) || canReach(arr, start - arr[start]);

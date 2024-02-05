@@ -14,10 +14,11 @@ public class LowestCommonAncestorInBST {
 
         int left = 10;
         int right =14;
-        System.out.println(new LowestCommonAncestorInBST().getLCABST(treeNode,left,right).val);
-        //System.out.println(new LowestCommonAncestorInBST().getLCABSTIterative(treeNode,left,right).val);
+        //System.out.println(new LowestCommonAncestorInBST().getLCABST(treeNode,left,right).val);
+        System.out.println(new LowestCommonAncestorInBST().getLCABSTIterative(treeNode,left,right).val);
     }
 
+    //Recursive approach
     public TreeNode getLCABST(TreeNode treeNode, int left, int right){
 
         if(treeNode == null){
@@ -26,15 +27,14 @@ public class LowestCommonAncestorInBST {
 
         if(treeNode.val > left && treeNode.val > right){
             return getLCABST(treeNode.left,left,right);
-        }
-
-        if(treeNode.val < left && treeNode.val < right){
+        }else if(treeNode.val < left && treeNode.val < right){
             return getLCABST(treeNode.right,left,right);
+        }else {
+            return treeNode;
         }
-
-        return treeNode;
     }
 
+    //Iterative approach
     public TreeNode getLCABSTIterative(TreeNode treeNode, int left, int right){
 
         while (treeNode != null)
@@ -47,11 +47,13 @@ public class LowestCommonAncestorInBST {
 
                 // If both n1 and n2 are greater
                 // than root, then LCA lies in right
-            if (treeNode.val < left && treeNode.val < right) {
+            else if (treeNode.val < left && treeNode.val < right) {
                 treeNode = treeNode.right;
+            }else {
+                return treeNode;
             }
 
         }
-        return treeNode;
+        return null;
     }
 }
