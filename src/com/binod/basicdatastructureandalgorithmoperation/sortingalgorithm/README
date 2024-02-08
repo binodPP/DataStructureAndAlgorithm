@@ -1,0 +1,64 @@
+1. Bubble Sort:
+
+Time Complexity:
+Best Case: O(n)
+Average Case: O(n^2)
+Worst Case: O(n^2)
+Space Complexity: O(1)
+Bubble Sort is an in-place comparison-based sorting algorithm.
+It repeatedly steps through the list, compares adjacent elements,
+and swaps them if they are in the wrong order.
+
+2. Selection Sort:
+
+Time Complexity:
+Best Case: O(n^2)
+Average Case: O(n^2)
+Worst Case: O(n^2)
+Space Complexity: O(1)
+Selection Sort divides the input list into two parts:
+the sorted sublist and the unsorted sublist. It repeatedly selects the
+smallest (or largest) element from the unsorted sublist and moves it to the sorted sublist.
+
+3. Insertion Sort:
+
+Time Complexity:
+Best Case: O(n)
+Average Case: O(n^2)
+Worst Case: O(n^2)
+Space Complexity: O(1)
+Insertion Sort builds the final sorted array one element at a time
+by repeatedly taking the next element from the unsorted part of the array and
+inserting it into its correct position in the sorted part of the array.
+
+4. Heap Sort:
+
+Time Complexity:
+Best Case: O(n log n)
+Average Case: O(n log n)
+Worst Case: O(n log n)
+Space Complexity: O(1)
+Heap Sort is based on the heap data structure. It builds a max heap or
+min heap from the input array and repeatedly extracts the maximum (or minimum)
+element from the heap and rebuilds the heap until the array is sorted.
+
+5. Quick Sort:
+
+Time Complexity:
+Best Case: O(n log n)
+Average Case: O(n log n)
+Worst Case: O(n^2)
+Space Complexity: O(log n) to O(n)
+Quick Sort is a divide-and-conquer algorithm. It selects a pivot element
+from the array and partitions the other elements into two subarrays according to whether they are less than or greater than the pivot. It then recursively sorts the subarrays.
+
+6. Merge Sort:
+
+Time Complexity:
+Best Case: O(n log n)
+Average Case: O(n log n)
+Worst Case: O(n log n)
+Space Complexity: O(n)
+Merge Sort is also a divide-and-conquer algorithm. It divides the input array
+into two halves, recursively sorts the two halves, and then merges the sorted halves to produce the final sorted array.
+In summary, while Bubble Sort, Selection Sort, and Insertion Sort are simple and have space complexity of O(1), they are not efficient for large datasets. Heap Sort, Quick Sort, and Merge Sort are more efficient for larger datasets, with Quick Sort being the fastest in practice for many scenarios. However, Merge Sort has a higher space complexity due to its need for auxiliary space for merging.

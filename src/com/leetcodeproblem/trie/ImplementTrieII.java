@@ -1,102 +1,74 @@
+/*
 package com.leetcodeproblem.trie;
 
 //https://takeuforward.org/data-structure/implement-trie-ii/
 public class ImplementTrieII {
-
     private TrieNode root;
-
-    private int countEqualWord=0;
-    private int countPrefixMatchWord=0;
-
     public ImplementTrieII() {
-        root = new TrieNode();
+        this.root = new TrieNode();
     }
 
-    //insert word into Tri data structure
     public void insert(String word){
         TrieNode trieNode = root;
         for (int i=0; i < word.length(); i++ ){
-            char ch= word.charAt(i);
-            if(!trieNode.containsCharKey(ch)){
-                trieNode.putChar(ch, new TrieNode());
+            int index = word.charAt(i) - 'a';
+            if(trieNode.links[index] == null){
+                trieNode.links[index] = new TrieNode();
             }
-
-            trieNode = trieNode.getCharKey(ch);
-            increasePrefix();
+            trieNode = trieNode.links[index];
         }
-        increaseEnd();
+        trieNode.isEndFlag=true;
     }
 
-    //countWordsEqualTo word into Tri data structure
-    public int countWordsEqualTo(String word){
+    public int countEqualsWords(String word){
         TrieNode trieNode = root;
         for (int i=0; i < word.length(); i++ ){
-            char ch= word.charAt(i);
-            if(!trieNode.containsCharKey(ch)){
+            int index = word.charAt(i) - 'a';
+            if(trieNode.links[index] == null){
                 return 0;
             }
-            trieNode = trieNode.getCharKey(ch);
+            trieNode = trieNode.links[index];
         }
-
-        return getEnd();
+        return countWords(trieNode);
     }
 
-    //count word startWith into Tri data structure
-    public int countWordsStartingWith(String word){
-        TrieNode trieNode = root;
-        for (int i=0; i < word.length(); i++ ){
-            char ch= word.charAt(i);
-            if(!trieNode.containsCharKey(ch)){
-                return 0;
+    private int countWords(TrieNode node) {
+       int count=0;
+       if(node.isEndFlag){
+           count++;
+       }
+        for ( TrieNode childLinks: node.links) {
+            if(childLinks != null){
+                count = count + countWords(childLinks);
             }
-            trieNode = trieNode.getCharKey(ch);
         }
-
-        return getPrefix();
+       return count;
     }
 
-    //delete word startWith into Tri data structure
-    public void delete(String word){
-        TrieNode trieNode = root;
-        for (int i=0; i < word.length(); i++ ){
-            char ch= word.charAt(i);
-            if(!trieNode.containsCharKey(ch)){
-                return;
-            }
-            trieNode = trieNode.getCharKey(ch);
-            reducePrefix();
-        }
-        deleteEnd();
-    }
-
-
-    public void increaseEnd() {
-        countEqualWord++;
-    }
-    public void increasePrefix() {
-        countPrefixMatchWord++;
-    }
-    public void deleteEnd() {
-        countEqualWord--;
-    }
-    public void reducePrefix() {
-        countPrefixMatchWord--;
-    }
-    public int getEnd() {
-        return countEqualWord;
-    }
-    public int getPrefix() {
-        return countPrefixMatchWord;
-    }
 
 
     public static void main(String[] args) {
-        ImplementTrieII T=new ImplementTrieII();
-        T.insert("apple");
-        T.insert("apple");
-        T.insert("apps");
-        T.insert("apps");
-        String word1 = "apps";
+        ImplementTrieII trie=new ImplementTrieII();
+        // Inserting words
+        trie.insert("apple");
+        trie.insert("apple");
+        trie.insert("app");
+        trie.insert("banana");
+
+        // Counting equal words
+        System.out.println("Count of 'app': " + trie.countEqualsWords("app"));
+        System.out.println("Count of 'apple': " + trie.countEqualsWords("apple"));
+
+        // Deleting a word
+        trie.delete("apple");
+
+        // Finding words with a prefix
+        trie.startsWith("app");
+        //T.insert("apple");
+        //T.insert("apps");
+        //T.insert("apps");
+        */
+/*String word1 = "apps";
         System.out.println("Count Words Equal to "+word1+" "+T.countWordsEqualTo(word1));
         String word2 = "abc";
         System.out.println("Count Words Equal to "+word2+" "+T.countWordsEqualTo(word2));
@@ -107,6 +79,8 @@ public class ImplementTrieII {
         System.out.println("Count Words Starting With "+word4+" "+T.countWordsStartingWith
                 (word4));
         T.delete(word1);
-        System.out.println("Count Words equal to "+word1+" "+T.countWordsEqualTo(word1));
+        System.out.println("Count Words equal to "+word1+" "+T.countWordsEqualTo(word1));*//*
+
     }
 }
+*/

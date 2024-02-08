@@ -50,6 +50,7 @@ public class InsertDeleteGetRandom_duplicate_381 {
             for (int i = 0; i < lastValueIndices.size(); i++) {
                 if (lastValueIndices.get(i) == lastIndex) {
                     lastValueIndices.set(i, indexToRemove);
+                    map.put(lastValue,lastValueIndices);
                     break;
                 }
             }

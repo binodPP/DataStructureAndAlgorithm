@@ -1,11 +1,13 @@
 package com.binod.basicdatastructureandalgorithmoperation.sortingalgorithm;
 
+import java.util.Arrays;
+
 //https://www.geeksforgeeks.org/merge-sort/
 public class MergeSortAlgorithm_912 {
 
     public static void main(String args[])
     {
-        int arr[] = {12, 11, 13, 5, 6, 7};
+        int arr[] = {12, 11, 13, 5, 6, 7,9};
 
         System.out.println("Given Array");
         printArray(arr);
@@ -18,6 +20,11 @@ public class MergeSortAlgorithm_912 {
 
         System.out.println("\nSorted array");
         printArray(arr);
+
+
+        int arr1[] = {12, 11, 13, 5, 6, 7,9};
+        mergeSort(arr1);
+        printArray(arr1);
     }
 
     static void printArray(int arr[])
@@ -94,5 +101,50 @@ public class MergeSortAlgorithm_912 {
             mergeSort(array, low, mid, high);
         }
 
+    }
+
+
+
+    public static void mergeSort(int[] arr) {
+        int n = arr.length;
+        if (n < 2) {
+            return; // Array of size 1 is already sorted
+        }
+
+        int mid = n/2;
+        int[] leftArray = Arrays.copyOfRange(arr, 0, mid);
+        int[] rightArray = Arrays.copyOfRange(arr, mid, n);
+
+        mergeSort(leftArray); // Sort the left sub-array
+        mergeSort(rightArray); // Sort the right sub-array
+
+        merge(arr, leftArray, rightArray); // Merge the sorted sub-arrays
+    }
+
+    public static void merge(int[] arr, int[] leftArray, int[] rightArray) {
+        int leftLength = leftArray.length;
+        int rightLength = rightArray.length;
+        int i = 0, j = 0, k = 0;
+
+        while (i < leftLength && j < rightLength) {
+            if (leftArray[i] <= rightArray[j]) {
+                arr[k] = leftArray[i];
+                i++;
+            } else {
+                arr[k] = rightArray[j];
+                j++;
+            }
+            k++;
+        }
+
+        // Copy remaining elements of leftArray, if any
+        while (i < leftLength) {
+            arr[k++] = leftArray[i++];
+        }
+
+        // Copy remaining elements of rightArray, if any
+        while (j < rightLength) {
+            arr[k++] = rightArray[j++];
+        }
     }
 }

@@ -1,31 +1,12 @@
 package com.leetcodeproblem.trie;
 
 public class TrieNode {
+    private static final int ALPHABET_SIZE  =26;
     TrieNode links[];
-    boolean isEndFlag = false;
+    boolean isEndFlag;
 
     public TrieNode(){
-      links = new TrieNode[26];
+        this.links = new TrieNode[ALPHABET_SIZE];
+        this.isEndFlag = false;
     }
-
-    public boolean containsCharKey(char ch){
-        return links[ch - 'a'] != null;
-    }
-
-    public void putChar(char ch, TrieNode trieNode){
-        links[ch - 'a'] = trieNode;
-    }
-
-    public TrieNode getCharKey(char ch){
-        return links[ch - 'a'];
-    }
-
-    public void setEnd(){
-        isEndFlag = true;
-    }
-    public boolean isEnd(){
-        return isEndFlag;
-    }
-
-
 }
