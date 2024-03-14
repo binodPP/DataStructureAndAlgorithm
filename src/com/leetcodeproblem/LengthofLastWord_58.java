@@ -4,8 +4,7 @@ public class LengthofLastWord_58 {
     public static void main(String[] args) {
         String s = "   fly me   to   the moon  ";
         String s1="Hello World";
-
-        System.out.println(lengthOfLastWord(s1));
+        System.out.println(lengthOfLastWord(s));
     }
 
     public static int lengthOfLastWord(String s) {

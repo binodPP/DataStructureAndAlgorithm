@@ -12,6 +12,8 @@ public class LongestPalindromicSubstring_05 {
     public String longestPalindrome(String s) {
 
         for(int i=0; i< s.length(); i++){
+            //By calling expandSubstring with different initial boundaries (i and i + 1), the code is able
+            // to cover both cases of palindromes (odd and even lengths)
             expandSubstring(s,i,i);
             expandSubstring(s,i,i+1);
         }

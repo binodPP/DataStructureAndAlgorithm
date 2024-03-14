@@ -56,9 +56,9 @@ public class InsertDeleteGetRandom_duplicate_381 {
             }
         }
         list.remove(lastIndex); // Remove the last element.
-        if (map.get(val).isEmpty()) {
+       /* if (map.get(val).isEmpty()) {
             map.remove(val);
-        }
+        }*/
         return true;
     }
 

@@ -2,11 +2,10 @@ package com.binod.basicdatastructureandalgorithmoperation.corejavaproblem.thread
 
 public class ShutDownHookTest extends Thread{
 
-
-    public void run(){
+    @Override
+    public void run() {
         System.out.println("Shutdown hook task completed");
     }
-
 
     public static void main(String[] args) {
 

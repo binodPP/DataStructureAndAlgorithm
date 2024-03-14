@@ -26,6 +26,9 @@ public class DeleteLastOccurrence {
         Node prev = null;
         Node current = node;
 
+        if(current != null && current.data == key){
+            head = current.next;
+        }
         while (current != null && current.data != key) {
             prev = current;
             current = current.next;
@@ -34,10 +37,6 @@ public class DeleteLastOccurrence {
         if (current == null) {
             System.out.println("Key not found in the linked list.");
             return;
-        }
-
-        if (prev == null) {
-            head = current.next;
         } else {
             prev.next = current.next;
         }
@@ -52,17 +51,15 @@ public class DeleteLastOccurrence {
             current = current.next;
         }
 
-        if (current == null) {
-            System.out.println("Position not found");
-            return;
-        }
-
         if (prev == null) {
             head = current.next;
-        } else {
-            prev.next = current.next;
         }
 
+        if (current == null) {
+            System.out.println("Position not found");
+        }else {
+            prev.next = current.next;
+        }
 }
 
     public void addFirst(int data) {

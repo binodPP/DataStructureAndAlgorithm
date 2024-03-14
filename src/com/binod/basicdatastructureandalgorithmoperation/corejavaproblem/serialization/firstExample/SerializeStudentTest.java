@@ -9,7 +9,7 @@ public class SerializeStudentTest {
         Student.fee=2500.0;
         System.out.println(student);
 
-        try(FileOutputStream fileOutputStream = new FileOutputStream("D:\\stud.ser");
+        try(FileOutputStream fileOutputStream = new FileOutputStream("stud.ser");
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)){
 
             objectOutputStream.writeObject(student);

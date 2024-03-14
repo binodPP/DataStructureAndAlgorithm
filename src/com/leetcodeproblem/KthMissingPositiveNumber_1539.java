@@ -1,8 +1,7 @@
 package com.leetcodeproblem;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+
 //https://leetcode.com/problems/kth-missing-positive-number/
 public class KthMissingPositiveNumber_1539 {
     public static void main(String[] args) {
@@ -10,6 +9,7 @@ public class KthMissingPositiveNumber_1539 {
         int k = 2;
         System.out.println(findKthPositive(arr,k));
         System.out.println(findKthPositive2(arr,k));
+        System.out.println(findKthPositive3(arr,k));
     }
 
     //Using Binary Search, Time complexity= O(log n) , space compleFFxity=O(1)
@@ -34,5 +34,19 @@ public class KthMissingPositiveNumber_1539 {
                 return i+k;
         }
         return arr.length+k;
+    }
+
+    public static int findKthPositive3(int[] arr, int k) {
+        int totalLength = arr[arr.length-1]+k;
+        Set<Integer> list = new TreeSet<>();
+        for (int i=1; i<= totalLength; i++){
+            list.add(i);
+        }
+        for(int i=0;i<arr.length;i++)
+        {
+            list.remove(arr[i]);
+        }
+
+        return new ArrayList<Integer>(list).get(k-1);
     }
 }

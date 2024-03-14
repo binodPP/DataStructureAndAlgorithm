@@ -2,7 +2,7 @@ package com.binod.basicdatastructureandalgorithmoperation.designpattern.creation
 
 public class Tripleton {
 
-    private static Tripleton INSTANCE1;
+    /*private static Tripleton INSTANCE1;
     private static int  count= 0;
 
     private Tripleton() {
@@ -15,22 +15,64 @@ public class Tripleton {
         }
         return INSTANCE1;
     }
+*/
+
+
+    private static volatile Tripleton INSTANCE1;
+    private static volatile Tripleton INSTANCE2;
+    private static volatile Tripleton INSTANCE3;
+
+    private Tripleton() {}
+
+    public static Tripleton getInstance(int instanceNumber) {
+        switch (instanceNumber) {
+            case 1:
+                if (INSTANCE1 == null) {
+                    synchronized (Tripleton.class) {
+                        if (INSTANCE1 == null) {
+                            INSTANCE1 = new Tripleton();
+                        }
+                    }
+                }
+                return INSTANCE1;
+            case 2:
+                if (INSTANCE2 == null) {
+                    synchronized (Tripleton.class) {
+                        if (INSTANCE2 == null) {
+                            INSTANCE2 = new Tripleton();
+                        }
+                    }
+                }
+                return INSTANCE2;
+            case 3:
+                if (INSTANCE3 == null) {
+                    synchronized (Tripleton.class) {
+                        if (INSTANCE3 == null) {
+                            INSTANCE3 = new Tripleton();
+                        }
+                    }
+                }
+                return INSTANCE3;
+            default:
+                throw new IllegalArgumentException("Invalid instance number");
+        }
+    }
 
 
     public static void main(String[] args) {
-        Tripleton multiThreadedWithPerformance1 = Tripleton.getInstance();
-        Tripleton multiThreadedWithPerformance2 = Tripleton.getInstance();
-        Tripleton multiThreadedWithPerformance3 = Tripleton.getInstance();
-        Tripleton multiThreadedWithPerformance4 = Tripleton.getInstance();
-        Tripleton multiThreadedWithPerformance5 = Tripleton.getInstance();
-        Tripleton multiThreadedWithPerformance6 = Tripleton.getInstance();
+        Tripleton multiThreadedWithPerformance1 = Tripleton.getInstance(1);
+        Tripleton multiThreadedWithPerformance2 = Tripleton.getInstance(2);
+        Tripleton multiThreadedWithPerformance3 = Tripleton.getInstance(3);
+        //Tripleton multiThreadedWithPerformance4 = Tripleton.getInstance(4);
+        //Tripleton multiThreadedWithPerformance5 = Tripleton.getInstance();
+        //Tripleton multiThreadedWithPerformance6 = Tripleton.getInstance();
 
         System.out.println("Hashcode of multiThreadedWithPerformance1: "+multiThreadedWithPerformance1.hashCode());
         System.out.println("Hashcode of multiThreadedWithPerformance2: "+multiThreadedWithPerformance2.hashCode());
         System.out.println("Hashcode of multiThreadedWithPerformance3: "+multiThreadedWithPerformance3.hashCode());
-        System.out.println("Hashcode of multiThreadedWithPerformance4: "+multiThreadedWithPerformance4.hashCode());
-        System.out.println("Hashcode of multiThreadedWithPerformance3: "+multiThreadedWithPerformance5.hashCode());
-        System.out.println("Hashcode of multiThreadedWithPerformance4: "+multiThreadedWithPerformance6.hashCode());
+        //System.out.println("Hashcode of multiThreadedWithPerformance4: "+multiThreadedWithPerformance4.hashCode());
+        //System.out.println("Hashcode of multiThreadedWithPerformance3: "+multiThreadedWithPerformance5.hashCode());
+        //System.out.println("Hashcode of multiThreadedWithPerformance4: "+multiThreadedWithPerformance6.hashCode());
 
     }
 }

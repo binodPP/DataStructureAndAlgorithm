@@ -35,15 +35,18 @@ public class ReverseLinkedList_206 {
 
     //Recursive way
     public static Node revreseLinkListRecursive(Node head){
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             return head;
-        }else {
-                Node nextPointer = head.next;
-                head.next = null;
-                Node newHead = revreseLinkListRecursive(nextPointer);
-                nextPointer.next = head;
-                return newHead;
         }
+
+        // Recursively reverse the rest of the list
+        Node reversedList = revreseLinkListRecursive(head.next);
+
+        // Adjust pointers to reverse the current node
+        head.next.next = head;
+        head.next = null;
+
+        return reversedList;
     }
 
     public void addFirst(int data){

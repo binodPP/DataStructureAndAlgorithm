@@ -8,7 +8,7 @@ public class DeserializationStudentTest {
 
         System.out.println("Start deserialization process for student class");
 
-        try(FileInputStream fileInputStream = new FileInputStream("D:\\stud.ser");
+        try(FileInputStream fileInputStream = new FileInputStream("stud.ser");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)){
 
             Object obj = objectInputStream.readObject();

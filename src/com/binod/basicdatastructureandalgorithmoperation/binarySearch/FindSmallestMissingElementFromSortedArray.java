@@ -35,24 +35,14 @@ public class FindSmallestMissingElementFromSortedArray {
         while (left <= right) {
             int mid = left + (right-left) / 2;
 
-           if (left == right && nums[0] == 0) {
-                return left+1;
-            }else if(left == right){
-                return left;
-            }
-
             if (nums[mid] == mid) {
                 left = mid + 1;
             } else {
-               if(nums[mid] ==1){
-                    return mid;
-                }else {
                     right = mid - 1;
                 }
             }
-        }
 
-        return -1;
+        return left;
     }
 
 }
