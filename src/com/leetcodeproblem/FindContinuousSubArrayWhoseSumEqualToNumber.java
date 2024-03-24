@@ -25,7 +25,7 @@ public class FindContinuousSubArrayWhoseSumEqualToNumber {
 
         //Iterating through inputArray starting from second element
 
-        for (int i = 0; i < inputArray.length; i++) { //Adding inputArray[i] to the current 'sum' sum = sum + inputArray[i];
+        /*for (int i = 0; i < inputArray.length; i++) { //Adding inputArray[i] to the current 'sum' sum = sum + inputArray[i];
             // If sum is greater than inputNumber then following loop is executed until
             // sum becomes either smaller than or equal to inputNumber while(sum > inputNumber && start <= i-1)
             currentSum = currentSum + inputArray[i];
@@ -41,6 +41,26 @@ public class FindContinuousSubArrayWhoseSumEqualToNumber {
                     right++;
                 }
 
+            }*/
+
+        while (right < inputArray.length){ //Adding inputArray[i] to the current 'sum' sum = sum + inputArray[i];
+            // If sum is greater than inputNumber then following loop is executed until
+            // sum becomes either smaller than or equal to inputNumber while(sum > inputNumber && start <= i-1)
+            currentSum = currentSum + inputArray[right];
+            if (currentSum == inputNumber) {
+
+                System.out.println("Continious sub array are between indexex : " + left + " and " + right);
+                break;
+            } else if (currentSum < inputNumber) {
+                right++;
+            } else if (currentSum > inputNumber) {
+                currentSum = currentSum - inputArray[left];
+                left++;
+                right++;
             }
+
+        }
+
+
     }
 }

@@ -1,4 +1,7 @@
 package com.binod.basicdatastructureandalgorithmoperation.BinaryTree;
+
+import java.util.Stack;
+
 //https://leetcode.com/problems/range-sum-of-bst/
 public class RangeSumBST_938 {
     private int ans=0;
@@ -13,6 +16,7 @@ public class RangeSumBST_938 {
         int low = 7, high = 15;
 
         System.out.println(new RangeSumBST_938().rangeSumBST(treeNode,low,high));
+        System.out.println(new RangeSumBST_938().rangeSumBSTDFSIterativeUsingStack(treeNode,low,high));
 
 
        /* TreeNode treeNode1 = new TreeNode(10);
@@ -56,6 +60,31 @@ public class RangeSumBST_938 {
        }
 
        return ans;
+    }
+// Iterative way using stack
+    public int rangeSumBSTDFSIterativeUsingStack(TreeNode root, int left, int right) {
+        int ans = 0;
+        if (root == null)
+            return ans;
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            if (node != null) {
+                if (left <= node.val && node.val <= right)
+                    ans += node.val;
+
+                if (node.val > left)
+                    stack.push(node.left);
+
+                if (node.val < right)
+                    stack.push(node.right);
+            }
+        }
+
+        return ans;
     }
 
     //Option 2 it will work for both binary tree and BST
