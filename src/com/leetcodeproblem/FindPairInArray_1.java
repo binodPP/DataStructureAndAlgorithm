@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FindPairInArray_1 {
+public class  FindPairInArray_1 {
 
 
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class FindPairInArray_1 {
         //binarySearchApproach(array1,target);
     }
 
-    //TimeComplexity = O(nlog(n)), Space = O(1)
+    //TimeComplexity = O(nlog(n)) + O(n), Space = O(1)
     public static void addTwoNumberToMatchTargetNumberUsingTwoPointerConcept(int[] array, int k){
         //https://leetcode.com/problems/two-sum/
         int left=0;
