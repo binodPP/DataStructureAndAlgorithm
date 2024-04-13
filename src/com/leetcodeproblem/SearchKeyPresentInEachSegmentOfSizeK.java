@@ -18,22 +18,23 @@ public class SearchKeyPresentInEachSegmentOfSizeK {
         int k=3;
         int i=0;
         boolean isAvailable=false;
-        while (i< k){
-            if(array[i] ==x){
-                isAvailable = true;
-                System.out.println(array[i]);
-                i=i+k-i;
-                k=k+3;
-                if(k > array.length){
+        while (i< array.length){
+            boolean foundInSegment = false;
+            for(int j = i; j< i+k && j< array.length; j++){
+                if(array[j] == x){
+                    foundInSegment = true;
+                    System.out.println(array[j]);
                     break;
                 }
-            }else {
-               // isAvailable = false;
-                i++;
+            }
+            if(!foundInSegment){
+                isAvailable = false;
+                break;
             }
 
+            isAvailable = true;
+            i= i+k;
         }
-
         System.out.println(isAvailable);
     }
 

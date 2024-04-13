@@ -36,7 +36,7 @@ public class RomanToInteger_13 {
        return result;
     }
 
-    //Option-2 Time Complexity= O(n), Space Complexity= O(1)
+    //Option-2 Time Complexity= O(n), Space Complexity= O(7) = O(1)
     public static int romanToIntOption2(String s) {
 
         Map<Character,Integer> map= new HashMap<>();

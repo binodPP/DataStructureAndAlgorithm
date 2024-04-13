@@ -1,6 +1,6 @@
 package com.leetcodeproblem;
 
-public class SlidingWindow_Max_From_K {
+public class SlidingWindow_MaxSum_From_K {
 
     public static void main(String[] args) {
         /*
@@ -35,7 +35,7 @@ public class SlidingWindow_Max_From_K {
     public static int maxSlidingWindow_2(int[] nums, int k) {
         int result=0;
         int i=0;
-        while (i<nums.length-k+1){
+        while (i<nums.length){
             int max=0;
             for(int j=i; j<i+k && j< nums.length;j++){
                 max= max + nums[j];
@@ -43,8 +43,7 @@ public class SlidingWindow_Max_From_K {
             if(max > result){
                 result = max;
             }
-
-            i= i+1;
+            i++;
         }
         return result;
     }
