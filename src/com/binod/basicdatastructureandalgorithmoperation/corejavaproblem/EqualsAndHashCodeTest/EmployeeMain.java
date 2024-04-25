@@ -8,7 +8,9 @@ public class EmployeeMain {
         Employee e2 = new Employee();
 
         e1.setId(100);
+        e1.setFirstname("Binod");
         e2.setId(100);
+        e2.setFirstname("Singh");
 
         System.out.println(e1.equals(e2));	//true
         System.out.println(e1.hashCode());
