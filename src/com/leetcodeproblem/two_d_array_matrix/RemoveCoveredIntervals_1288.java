@@ -7,7 +7,7 @@ import java.util.List;
 
 public class RemoveCoveredIntervals_1288 {
     public static void main(String[] args) {
-      int[][] intervals = {{1,4},{3,6},{2,8}};
+      int[][] intervals = {{1,4},{3,6},{1,8}};
         System.out.println(removeCoveredIntervals(intervals));
     }
 
@@ -15,7 +15,14 @@ public class RemoveCoveredIntervals_1288 {
         //To solve this problem in Java, you can sort the intervals based on their starting points. Then, iterate through the sorted intervals and keep track of the current maximum ending point. If the current interval's ending point is less than or equal to the maximum ending point, it means it is covered by another interval and can be removed. Otherwise, update the maximum ending point and keep the current interval. Here's the implementation:
 
         //This solution sorts the intervals in ascending order of starting points. Then, it iterates through the sorted intervals and keeps track of the maximum ending point encountered so far. If the ending point of the current interval is greater than the maximum ending point, it means the current interval is not covered by any other interval, so it is counted in the result. Finally, it returns the count of remaining intervals.
-        Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
+        //Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
+        Arrays.sort(intervals, (a,b) ->{
+            if(a[0] != b[0]){
+                return a[0] - b[0]; // Sort by start time
+            }else {
+                return b[1] - a[1]; //// If start times are equal, sort by end time in descending order
+            }
+        });
         int remainingIntervals = 0;
         int maxEnd = Integer.MIN_VALUE;
 

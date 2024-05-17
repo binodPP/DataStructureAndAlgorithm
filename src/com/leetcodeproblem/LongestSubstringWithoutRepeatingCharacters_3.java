@@ -12,8 +12,9 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
     public static void main(String[] args) {
         String str="pwwkew";
 
-        System.out.println(lengthOfLongestSubstring(str));
-        System.out.println(lengthOfLongestSubstringBetter(str));
+       // System.out.println(lengthOfLongestSubstring(str));
+       // System.out.println(lengthOfLongestSubstringBetter(str));
+        System.out.println(lengthOfLongestSubstringSimplified(str));
 
     }
 
@@ -68,5 +69,18 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
             end++;
         }
         return result;
+    }
+
+
+    public static int lengthOfLongestSubstringSimplified(String s) {
+        int i = 0, j = 0, N = s.length(), dup = 0;
+        int[] cnt = new int[128];
+        for (; j < N; ++j) {
+            dup += ++cnt[s.charAt(j)] == 2 ? 1 : 0;
+            if (dup > 0) {
+                dup -= --cnt[s.charAt(i++)] == 1 ? 1 : 0;
+            }
+        }
+        return j - i;
     }
 }
