@@ -2,6 +2,18 @@ package com.binod.basicdatastructureandalgorithmoperation.designpattern.creation
 
 import java.io.Serializable;
 
+//Violation of Singleton Principles
+//Instance Control:
+//Singleton: Ensures a single instance.
+//Doubleton/Tripleton: Allows two or three instances, respectively.
+
+//Global Access Point:
+//Singleton: Provides a single global access point.
+//Doubleton/Tripleton: Provides a controlled number of global access points.
+
+//Use Case:
+//Singleton: Best for resources that should not be duplicated, such as configuration settings, logging, or connection pooling.
+//Doubleton/Tripleton: Useful in scenarios where exactly two or three instances are beneficial, such as load balancing between a fixed number of resources.
 public class ThreadSafeSingletonDoubleCheck implements Cloneable, Serializable {
     //use below code for double check locking
     private static volatile ThreadSafeSingletonDoubleCheck instanceDoubleCheckLocking;

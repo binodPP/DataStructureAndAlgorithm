@@ -75,12 +75,15 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
     public static int lengthOfLongestSubstringSimplified(String s) {
         int i = 0, j = 0, N = s.length(), dup = 0;
         int[] cnt = new int[128];
-        for (; j < N; ++j) {
+        for (; j < N; j++) {
             dup += ++cnt[s.charAt(j)] == 2 ? 1 : 0;
             if (dup > 0) {
                 dup -= --cnt[s.charAt(i++)] == 1 ? 1 : 0;
             }
         }
+        System.out.println(j);
+        System.out.println(i);
+        System.out.println(s.substring(i,j));
         return j - i;
     }
 }

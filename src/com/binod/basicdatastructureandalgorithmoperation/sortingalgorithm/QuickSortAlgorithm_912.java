@@ -8,11 +8,11 @@ public class QuickSortAlgorithm_912 {
         QuickSortAlgorithm_912 ob = new QuickSortAlgorithm_912();
         int low =0;
         int high=n-1;
-        ob.sortAlgorithm(arr, low, high);
+       // ob.sortAlgorithm(arr, low, high);
 
-        for(int i=0; i< arr.length ; i++){
+        /*for(int i=0; i< arr.length ; i++){
             System.out.println("Arrays : " + arr[i]);
-        }
+        }*/
 
         quickSort(arr,low,high);
 
