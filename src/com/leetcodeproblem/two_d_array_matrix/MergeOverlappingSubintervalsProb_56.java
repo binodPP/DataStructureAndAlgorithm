@@ -11,7 +11,7 @@ public class MergeOverlappingSubintervalsProb_56 {
     }
 
     // Time Complexity: O(NlogN)+O(N). O(NlogN) for sorting the array,
-    // and O(N) because we are checking to the right for each index which is a for loop.so final complexity is O(n).
+    // and O(N) because we are checking to the right for each index which is a for loop.so final complexity is O(n log n).
 
     //Space Complexity: O(1), as we are using stack a separate data structure.
 

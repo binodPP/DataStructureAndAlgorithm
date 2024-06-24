@@ -4,11 +4,9 @@ import java.util.Queue;
 
 class Consumer extends Thread {
     private Queue<Integer> queue;
-    private int maxSize;
-    public Consumer(Queue<Integer> queue, int maxSize, String name){
+    public Consumer(Queue<Integer> queue, String name){
         super(name);
         this.queue = queue;
-        this.maxSize = maxSize;
     }
     @Override
     public void run() {

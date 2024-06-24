@@ -34,10 +34,10 @@ public class MergedTwoSortedLinkedList_21 {
         }
         while (l1 !=null && l2 !=null){
             if(l1.data <= l2.data){
-                current.next=l1;
+                current.next=new Node(l1.data);
                 l1=l1.next;
             }else {
-                current.next=l2;
+                current.next=new Node(l2.data);
                 l2=l2.next;
             }
             current = current.next;

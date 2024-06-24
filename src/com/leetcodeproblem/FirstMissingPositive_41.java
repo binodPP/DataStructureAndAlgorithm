@@ -54,7 +54,7 @@ public class FirstMissingPositive_41 {
                 }
             }
 
-            if(missingFlag == true){
+            if(missingFlag){
                 return i;
             }
         }

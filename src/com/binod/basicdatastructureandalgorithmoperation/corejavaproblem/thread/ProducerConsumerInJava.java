@@ -12,7 +12,7 @@ public class ProducerConsumerInJava {
         int maxSize = 10;
 
         Producer producer = new Producer(buffer, maxSize, "PRODUCER");
-        Consumer consumer = new Consumer(buffer, maxSize, "CONSUMER");
+        Consumer consumer = new Consumer(buffer, "CONSUMER");
 
         producer.start();
         consumer.start(); }
