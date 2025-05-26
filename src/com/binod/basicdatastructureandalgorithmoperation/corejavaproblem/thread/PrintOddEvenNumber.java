@@ -1,13 +1,13 @@
 package com.binod.basicdatastructureandalgorithmoperation.corejavaproblem.thread;
 
 public class PrintOddEvenNumber{
-    int counter=1;
-    static int N;
+    private int counter=1;
+    private int N=10;
 
     public static void main(String[] args)
     {
         // Given Number N
-        N = 10;
+       /* N = 10;*/
 
         // Create an object of class
         PrintOddEvenNumber mt = new PrintOddEvenNumber();
@@ -34,7 +34,7 @@ public class PrintOddEvenNumber{
 
                     // Exception handle
                     try {
-                        wait();
+                        wait(100);
                     }
                     catch (
                             InterruptedException e) {

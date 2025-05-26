@@ -9,11 +9,11 @@ public class PalindromeLinkedList_234 {
 
     public static void main(String[] args) {
         PalindromeLinkedList_234 findKth= new PalindromeLinkedList_234();
-        //findKth.addFirst(1);
-        //findKth.addFirst(2);
-        //findKth.addFirst(3);
+        findKth.addFirst(1);
         findKth.addFirst(2);
         findKth.addFirst(1);
+        //findKth.addFirst(2);
+        //findKth.addFirst(1);
 
 
         System.out.println(isPalindrome(findKth.head));
